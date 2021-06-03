@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import Routes from "./Routes/mainRoute";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Partner from "../src/pages/becomeapartner/partner";
+import Payment from "../src/pages/paymentgateway/payment";
+import Mutual from "../src/pages/mutualfunds/mutual";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={Routes} />
+          <Route path="/partner" component={Partner} />
+          <Route path="/payment" component={Payment} />
+          <Route path="/mutual" component={Mutual} />
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
