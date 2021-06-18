@@ -16,7 +16,7 @@ export default function Transfer() {
 
   return (
     <div className={classes.content}>
-      <h1>Transfer</h1>
+      <h1 >Transfer</h1>
     </div>
   );
 }

@@ -1,22 +1,14 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import React from 'react';
+import { Context } from '../../Context/Offer&DealsContext'
+import OffersDealsRoutes from '../../Routes/OffersDealsRoutes';
 
-const useStyles = makeStyles((theme) => ({
-  content: {
-    display: "block",
-    marginLeft: "16em",
-    marginTop: "-2em",
-    [theme.breakpoints.down("xs")]: {
-      marginLeft: "1em",
-    },
-  },
-}));
 export default function Offers() {
-  const classes = useStyles();
-
-  return (
-    <div className={classes.content}>
-      <h1>Offers & Deals</h1>
-    </div>
-  );
+	return (
+		
+		<div style={{ width: '83%', float: 'right' ,marginBottom:"30px"}}>
+			<Context>
+				<OffersDealsRoutes/>
+		</Context>
+		</div>
+	);
 }
