@@ -33,7 +33,7 @@ export default function CardSlider() {
 	
 		}
 	return (
-		<div className="row ">
+		<div className="row" style={{ marginBottom:"100px"}}>
 			{store.map((items, index) => {
 				
 				return (

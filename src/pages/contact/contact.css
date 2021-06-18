@@ -1,0 +1,37 @@
+.contactsection{
+    margin-left: 247px;
+    width: 1040px;
+    height: 420px;
+    
+  }
+  .contacts1{
+    font-Size:small;
+    width:440px;
+    line-height:22px;
+  }
+
+  .contact2{
+    font-size:small;
+    width: 440px;
+  }
+  @media screen and (max-width: 450px) {
+    .contactsection{
+      margin-left: 10px;
+      height: 800px;
+    
+    }
+    .contact1{
+      font-weight: bolder;
+      font-size: 14px;
+    }
+    .contact2{
+      font-size: 11px;
+      width: 280px;
+    }
+    .contacts1{
+      font-Size:11px;
+      width:440px;
+      line-height:22px;
+    }
+  
+  }

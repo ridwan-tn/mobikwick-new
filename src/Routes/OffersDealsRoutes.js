@@ -43,8 +43,8 @@ export default function OffersDealsRoutes() {
 			<Route exact path={`${path}/${sectionName}`} component={ SeeAll } />
 			))}
 
-		
 </Switch>
+		<Footer/>
 		</Router>
 
 		</>

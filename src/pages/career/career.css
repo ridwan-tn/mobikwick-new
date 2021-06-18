@@ -1,0 +1,40 @@
+.careersection{
+    margin-left: 240px;
+    width: 1040px;
+    height: 690px;
+  }
+  .firstpara{
+    font-size: small;
+  
+  }
+  .th1{
+    font-size: small;
+    width: 140px;
+  }
+  .tb1{
+    background:#fff;
+    height:30px;
+    width:80px;
+    font-size:x-small;
+    color:blue;
+    margin-left:90px;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .careersection{
+      margin-left: 0px;
+      width: 360px;
+    }
+    .th1{
+      font-size: x-small;
+      width: 140px;
+    }
+    .tb1{
+      background:#fff;
+      height:26px;
+      width:70px;
+      font-size:xx-small;
+      color:blue;
+      margin-left:60px;
+    }
+  }

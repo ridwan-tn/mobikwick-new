@@ -1,0 +1,65 @@
+.main{
+    margin-left: 260px;
+    margin-top: 0px;
+    width: 960px;
+    background: rgb(252, 250, 250);
+}
+.mainimg{
+    width: 280px;
+}
+.secondsection{
+    margin-left: 80px;
+}
+.secondp{
+    font-size: 12px;
+    width: 630px;
+    color: #757575
+}
+.thirdp2{
+    font-size: 13px;
+}
+
+
+@media only screen and (max-width: 450px) {
+    .main{
+        margin-left: 0px;
+        margin-top: 0px;
+    }
+    .postshead{
+        font-size: large;
+    }
+    .appsfirsth{
+        width: 270px;
+        margin-top: 10px;
+    }
+    .mainimg{
+        width: 160px;
+        height: 150px;
+        margin-left: 54px;
+    }
+    .secondsection{
+        margin-left: 10px;
+    }
+    .secondp{
+        font-size: 11px;
+        width: 265px;
+    }
+    .appsimg1{
+        width: 95px;
+        margin-left: 12px;
+    }
+    .appimg{
+        margin-left: 18px;
+        
+    }
+    .thirdsections{
+        width: 280px;
+    }
+    .thirdp{
+        font-size: small;
+    }
+    .thirdp2{
+        font-size: 10px;
+    }
+
+}

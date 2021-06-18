@@ -12,7 +12,13 @@ import Footer from "../Components/Footer/Footer";
 import Offers from "../pages/offers&deals/offers";
 import  SeeAll from "../Components/SeeAll/SeeAll"
 import ElectricityPayment from "../Components/ElectricityPayments/ElectricityPayment";
-
+import LocalStore from "./LocalStore";
+import Apps from "../pages/appspage/apps";
+import Blog from "../pages/Blog/Blog";
+import Career from "../pages/career/career";
+import About from "../pages/About/about";
+import Contact from "../pages/contact/contact";
+import Sitemap from "../pages/sitemap/sitemap";
 export default function main() {
   return (
     <div>
@@ -54,10 +60,9 @@ export default function main() {
             render={(props) => <Wallet {...props} />}
           />
           <div style={{width:"84%",float:"right",marginBottom:"100px"}}>
-        <Route exact path="/electricity-payment/avvnl" component={ ElectricityPayment } />	
+         <Route exact path="/electricity-payment/avvnl" component={ ElectricityPayment } />	
         </div>
         </Switch>
-        <Footer/>
       </BrowserRouter>
     </div>
   );
