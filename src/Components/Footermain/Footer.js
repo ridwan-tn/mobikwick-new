@@ -11,7 +11,7 @@ export default function Footer(props) {
       <div className="col-2 offer-footer-links"  >
         <div className="link">
         
-          <link to href=" " className="strong"> Prepaid Recharge</link>
+          <Link to="/prapaid " className="strong"> Prepaid Recharge</Link>
           
           
             <Link to="/bsnl">
@@ -32,26 +32,26 @@ export default function Footer(props) {
         </div>
 
         <div className="link mt-3">
-          <a href=" " className="strong"> Postpaid Recharge</a>
-          <a href=" "> Vodafone Idea (VI) Bill Reacharge</a>
-          <a href=" "> BSNL Bill Payment</a>
-          <a href=" "> Airtel Bill Payment</a>
-          <a href=" "> JIO Bill Payment</a>
+          <Link to=" " className="strong"> Postpaid Recharge</Link>
+          <Link to=" "> Vodafone Idea (VI) Bill Reacharge</Link>
+          <Link to=" "> BSNL Bill Payment</Link>
+          <Link to=" "> Airtel Bill Payment</Link>
+          <Link to=" "> JIO Bill Payment</Link>
         </div>
       </div>
 
       <div className="col-3 offer-footer-links">
         <div className="link">
-          <a href=" " className="strong"> DTH Reacharge</a>
-          <a href=" "> Airtel DTH Reacharge</a>
-          <a href=" "> Dish TV Idea (VI) Reacharge</a>
-          <a href=" "> Tata Sky Reacharge</a>
-          <a href=" "> Sun Direct Reacharge</a>
-          <a href=" "> Videocon D2H Reacharge</a>
+          <Link to=" " className="strong"> DTH Reacharge</Link>
+          <Link to=" "> Airtel DTH Reacharge</Link>
+          <Link to=" "> Dish TV Idea (VI) Reacharge</Link>
+          <Link to=" "> Tata Sky Reacharge</Link>
+          <Link to=" "> Sun Direct Reacharge</Link>
+          <Link to=" "> Videocon D2H Reacharge</Link>
         </div>
 
         <div className="link mt-3">
-          <a href=" " className="strong"> Electricity Bil Payment</a>
+          <Link to=" " className="strong"> Electricity Bil Payment</Link>
           <Link to='/electricity-payment/avvnl'> AVVNL Bill Payment </Link>
           <Link to='/electricity-payment/apdcl'> APDCL Bill Payment</Link>
           <Link to='/electricity-payment/bescom'> BESCOM Bill Payment</Link>
@@ -64,40 +64,40 @@ export default function Footer(props) {
       <div className="col-3 offer-footer-links">
         <div className="link">
           <p className="strong m-0"> Others </p>
-          <a href=" "> Datacard Reacharge</a>
-          <a href=" "> Gas Bill Reacharge</a>
-          <a href=" "> Gas Booking Reacharge</a>
-          <a href=" "> Credit Card Bill Payment</a>
-          <a href=" "> Instant Loans  </a>
-          <a href=" "> EMI Payment </a>
-          <a href=" "> Broadband Bill Payment </a>
-          <a href=" "> Water Bill Payment </a>
-          <a href=" "> Insurance </a>
+          <Link to=" "> Datacard Reacharge</Link>
+          <Link to=" "> Gas Bill Reacharge</Link>
+          <Link to=" "> Gas Booking Reacharge</Link>
+          <Link to=" "> Credit Card Bill Payment</Link>
+          <Link to=" "> Instant Loans  </Link>
+          <Link to=" "> EMI Payment </Link>
+          <Link to=" "> Broadband Bill Payment </Link>
+          <Link to=" "> Water Bill Payment </Link>
+          <Link to=" "> Insurance </Link>
         </div>  
       </div>
 
       <div className="col-2 offer-footer-links">
         <div className="link">
           <p className="strong m-0"> Company </p>
-          <a href=" "> About</a>
-          <a href=" "> Career</a>
-          <a href=" "> Blog</a>
-          <a href=" "> Press</a>
-          <a href=" "> Contact  </a>
-          <a href=" "> Blug Bounty </a>
-          <a href=" "> Sitemap </a>
+          <Link to=" "> About</Link>
+          <Link to=" "> Career</Link>
+          <Link to=" "> Blog</Link>
+          <Link to=" "> Press</Link>
+          <Link to=" "> Contact  </Link>
+          <Link to=" "> Blug Bounty </Link>
+          <Link to=" "> Sitemap </Link>
         </div>  
       </div>
 
       <div className="col-2 offer-footer-links">
         <div className="link">
           <p className="strong m-0"> Help & Support </p>
-          <a href=" "> Home</a>
-          <a href=" "> Mobile Apps</a>
-          <a href=" "> Payment Options</a>
-          <a href=" "> FAQ </a>
-          <a href=" "> Help  </a>
-          <a href="/partner"> Become a Partner </a>
+          <Link to=" "> Home</Link>
+          <Link to=" "> Mobile Apps</Link>
+          <Link to=" "> Payment Options</Link>
+          <Link to=" "> FAQ </Link>
+          <Link to=" "> Help  </Link>
+          <Link to="/partner"> Become a Partner </Link>
         </div>  
       </div>
 
@@ -105,28 +105,28 @@ export default function Footer(props) {
         <div className="link">
           <p className="strong m-0"> Help & Support </p>
           <div className="image-links d-flex">
-          <a href=" " className="image-visa image-link me-1"> </a>
-          <a href=" " className="image-master image-link"> </a>
+          <Link to=" " className="image-visa image-link me-1"> </Link>
+          <Link to=" " className="image-master image-link"> </Link>
           </div>
         </div>  
       </div>
       <div className=" row  mid-footer width901">
        <div className="col-12 d-flex justify-content-center align-items-center">
-         <a  href=" " className="mid-footer-links br "> Privacy Policy</a>|
-    <a  href=" " className="mid-footer-links br "> Terms&Conditions</a>|
-     <a  href=" " className="mid-footer-links br "> Refund Policy</a>|
-     <a  href=" " className="mid-footer-links br "> Grievance Policy</a>|
-     <a  href=" " className="mid-footer-links "> PAYBACK Policy</a>
+         <Link to=" " className="mid-footer-links br "> Privacy Policy</Link>|
+    <Link to=" " className="mid-footer-links br "> Terms&Conditions</Link>|
+     <Link to=" " className="mid-footer-links br "> Refund Policy</Link>|
+     <Link to=" " className="mid-footer-links br "> Grievance Policy</Link>|
+     <Link to=" " className="mid-footer-links "> PAYBACK Policy</Link>
       </div>
       
     </div>
     <div className=" row mid-footer width900">
        <div className="col-12 d-flex justify-content-center align-items-center">
-         <a  href=" " className="mid-footer-links br ">  About</a>|
-    <a  href=" " className="mid-footer-links br "> Career</a>|
-     <a  href=" " className="mid-footer-links br "> Blog</a>|
-     <a  href=" " className="mid-footer-links br ">  Press </a>|
-     <a  href=" " className="mid-footer-links "> Contact </a>
+         <Link to=" " className="mid-footer-links br ">  About</Link>|
+    <Link to=" " className="mid-footer-links br "> Career</Link>|
+     <Link to=" " className="mid-footer-links br "> Blog</Link>|
+     <Link to=" " className="mid-footer-links br ">  Press </Link>|
+     <Link to=" " className="mid-footer-links "> Contact </Link>
       </div>
       
     </div>
