@@ -11,7 +11,7 @@ export default function Footer(props) {
       <div className="col-2 offer-footer-links"  >
         <div className="link">
         
-          <a href=" " className="strong"> Prepaid Recharge</a>
+          <link to href=" " className="strong"> Prepaid Recharge</link>
           
           
             <Link to="/bsnl">
