@@ -25,12 +25,17 @@ import payment from "../../assets/payment.png";
 import money from "../../assets/money.png";
 import mutual from "../../assets/mutual.png";
 import signup from "../../assets/signup.png";
+import logo2 from "../../assets/logo2.png";
 import { Link } from "react-router-dom";
+
 const drawerWidth = 225;
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
+    background: "white",
+    height: "100%",
+    width: "100%",
   },
   drawer: {
     [theme.breakpoints.up("sm")]: {
@@ -63,6 +68,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     padding: theme.spacing(2),
     marginTop: "4em",
+
   },
   grow: {
     flexGrow: 1,
@@ -77,12 +83,12 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "Bahnschrift Light",
     marginLeft: "-18px",
   },
-  divider1:{
-    height: "1.3em", marginTop: "1.6em", background: "grey",
-    display:"block",
-    [theme.breakpoints.down("xs")]: {
-      
-     },
+  divider1: {
+    height: "1.3em",
+    marginTop: "1.6em",
+    background: "grey",
+    display: "block",
+    [theme.breakpoints.down("xs")]: {},
   },
   appbarTitle: {
     color: "rgba(29 146 222)",
@@ -90,7 +96,10 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "14px",
     cursor: "pointer",
     marginRight: 15,
-     marginLeft:15
+    marginLeft: 15,
+    [theme.breakpoints.down("xs")]: {
+      margin: 7,
+    },
   },
   appbarTitle1: {
     color: "rgba(29 146 222)",
@@ -100,7 +109,7 @@ const useStyles = makeStyles((theme) => ({
     marginRight: 15,
     marginLeft: 15,
     [theme.breakpoints.down("xs")]: {
-     display:"none"
+      display: "none",
     },
   },
 }));
@@ -284,36 +293,34 @@ function Sideapp(props) {
             onClick={handleDrawerToggle}
             className={classes.menuButton}
           >
-            <MenuIcon />
+            <MenuIcon style={{ color: "blue" }} />
+            <img src={logo2} alt="logo" style={{ paddingLeft: "10px" }} />
           </IconButton>
 
           <div className={classes.grow} />
-          <div >
-            <Typography className={classes.appbarTitle1}>What we do?</Typography>{" "}
+          <div>
+            <Typography className={classes.appbarTitle1}>
+              What we do?
+            </Typography>{" "}
           </div>
           <Divider
             orientation="vertical"
             flexItem
-            style={{ height: "1.3em", marginTop: "1.6em",background:"grey" }}
+            style={{ height: "1.3em", marginTop: "1.6em", background: "grey" }}
           />
-          <div >
+          <div>
             <Typography className={classes.appbarTitle1}>Help?</Typography>{" "}
           </div>
-          <Divider
-            className={classes.divider1}
-            
-          />
-          <div >
+          <Divider className={classes.divider1} />
+          <div>
             <Typography className={classes.appbarTitle}>Login</Typography>{" "}
           </div>
           <Divider
             orientation="vertical"
             flexItem
-            style={{ height: "1.3em", marginTop: "1.6em",background:"grey" }}
+            style={{ height: "1.3em", marginTop: "1.6em", background: "grey" }}
           />
-          <div
-            
-          >
+          <div>
             <Typography className={classes.appbarTitle}>Signup</Typography>
           </div>
           <IconButton>
@@ -352,7 +359,10 @@ function Sideapp(props) {
           </Drawer>
         </Hidden>
       </nav>
-      <main className={classes.content}></main>
+      <main className={classes.content}>
+
+        
+      </main>
     </div>
   );
 }
