@@ -26,11 +26,13 @@ import money from "../../assets/money.png";
 import mutual from "../../assets/mutual.png";
 import signup from "../../assets/signup.png";
 import { Link } from "react-router-dom";
+
 const drawerWidth = 225;
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
+    
   },
   drawer: {
     [theme.breakpoints.up("sm")]: {
@@ -352,7 +354,9 @@ function Sideapp(props) {
           </Drawer>
         </Hidden>
       </nav>
+      
       <main className={classes.content}></main>
+    
     </div>
   );
 }
