@@ -2,14 +2,23 @@ import React from "react";
 import Sideapp from "../Components/Side&App Bar/sideapp";
 import Recharge from "../pages/recharge&bill/recharge";
 import Transfer from "../pages/transferbank/transfer";
-import Offer from "../pages/offers&deals/offers";
 import Boostloan from "../pages/boostloan/boostloan";
 import Local from "../pages/localstores/local";
 import Payback from "../pages/redeempayback/payback";
 import Mgm from "../pages/redeemmgm/mgm";
 import Wallet from "../pages/wallettransfer/wallet";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import Footer from "../Components/Footer/Footer";
+import Offers from "../pages/offers&deals/offers";
+import  SeeAll from "../Components/SeeAll/SeeAll"
+import ElectricityPayment from "../Components/ElectricityPayments/ElectricityPayment";
+import LocalStore from "./LocalStore";
+import Apps from "../pages/appspage/apps";
+import Blog from "../pages/Blog/Blog";
+import Career from "../pages/career/career";
+import About from "../pages/About/about";
+import Contact from "../pages/contact/contact";
+import Sitemap from "../pages/sitemap/sitemap";
 export default function main() {
   return (
     <div>
@@ -30,8 +39,9 @@ export default function main() {
           <Route
             exact
             path="/offers"
-            render={(props) => <Offer {...props} />}
+            render={(props) => <Offers {...props} /> }
           />
+
           <Route
             exact
             path="/boost"
@@ -49,6 +59,9 @@ export default function main() {
             path="/wallet"
             render={(props) => <Wallet {...props} />}
           />
+          <div style={{width:"84%",float:"right",marginBottom:"100px"}}>
+         <Route exact path="/electricity-payment/avvnl" component={ ElectricityPayment } />	
+        </div>
         </Switch>
       </BrowserRouter>
     </div>

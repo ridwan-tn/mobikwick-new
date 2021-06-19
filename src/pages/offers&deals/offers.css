@@ -1,0 +1,13 @@
+@media (max-width: 1081px){
+    .PrivateHiddenCss-xsDown-15{
+        display:none;
+    }
+    .makeStyles-appBar-3{
+        width: 100% !important;
+    }
+    .offer-deals{
+        width:100% !important;
+        float: none !important;
+    }
+
+}

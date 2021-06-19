@@ -1,5 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import Popup from './popup/popup'
 
 const useStyles = makeStyles((theme) => ({
   content: {
@@ -16,7 +17,7 @@ export default function Local() {
 
   return (
     <div className={classes.content}>
-      <h1>Local Stores</h1>
+     <Popup/>
     </div>
   );
 }

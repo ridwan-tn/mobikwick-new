@@ -1,0 +1,17 @@
+.sitemapsection{
+    margin-left: 250px;
+    width: 1040px;
+    padding-top: 20px;
+  }
+  @media screen and (max-width: 450px) {
+    .sitemapsection{
+      margin-left: 1px;
+      padding-top: 20px;
+      width: 335px;
+    }
+    .sitemaps{
+      font-size: 11px;
+    }
+
+  }
+  

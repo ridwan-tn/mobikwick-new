@@ -132,7 +132,7 @@ function Sideapp(props) {
         </Link>
       </div>
       <div>
-        <List style={{ marginLeft: "0.5em" }}>
+        <List className="sidebar" style={{ marginLeft: "0.5em" }}>
           <ListItem active>
             <ListItemIcon className={classes.listIcon}>
               <img src={Flash} alt="logo" />
