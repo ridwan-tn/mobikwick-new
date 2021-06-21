@@ -10,7 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 
 import mutualfund244 from '../../assets/mutualfund244.png'
-
+import Footer from "../../Components/Footer/Footer";
 import mutualfund245 from '../../assets/mutualfund245.png'
 import mutualfund246 from '../../assets/mutualfund246.png'
 
@@ -607,6 +607,7 @@ However, KYC process on MobiKwik is rather simple and quick and can be done with
      <a href="#" style={{color:"rgb(106,106,106)"}}>Mutual Fund</a>
     
    </Grid>
+   <Footer/>
     </div>
   );
 }
