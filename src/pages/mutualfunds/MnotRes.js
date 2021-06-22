@@ -18,7 +18,7 @@ import Mutualfund5 from './mutualfund3'
  import  Bestmfund from './MBestmutual'
  import Fundexplore from './MfundExplore'
   import MfundFinder from './MFundFinder'
- import Mfundcompare from './Mfundcompare'
+ import Mfundcompare from './MFundcompare'
 import Mutualfund1 from './mutualfund1'
 import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';

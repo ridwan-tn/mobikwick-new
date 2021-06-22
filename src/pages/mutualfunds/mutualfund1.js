@@ -51,7 +51,7 @@ import Card from '@material-ui/core/Card';
 import TwitterIcon from '@material-ui/icons/Twitter';
 
 import Avatar from '@material-ui/core/Avatar';
-import "react-bootstrap-carousel/dist/react-bootstrap-carousel.css";
+// import "react-bootstrap-carousel/dist/react-bootstrap-carousel.css";
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
@@ -210,10 +210,16 @@ const useStyles = makeStyles((theme) => ({
             fontsize:20
           }
       },
-  paper1:{
+  paper2:{
       alignItems:"center",
      justifyContent :"center",
-      backgroundColor:"white",
+      backgroundColor:"",
+      height:"50%",
+      [theme.breakpoints.down("sm")]:{
+          diplay:"none",
+          backgroundcolor:"red"
+         
+      }
      
   },
   media: {
@@ -228,6 +234,10 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft:"20px",
     paddingRight:"20px",
     width:"100%",
+    height:"100%",
+    [theme.breakpoints.down("sm")]:{
+      display:"none"
+    }
   }
   },
   Content:{
@@ -268,6 +278,11 @@ const useStyles = makeStyles((theme) => ({
         width:"400px",
         height:"400px",
       },
+  },
+  imagecontainer10:{
+      width:'100%',
+      height:"100%",
+      backgroundcolor:"yellow",
   }
   }));
   export default function Mutualfund1(){
@@ -276,16 +291,17 @@ const useStyles = makeStyles((theme) => ({
       const handleClickmobile = () => setName({mutualfund50})
       return(
           <div className={classes.paper1}>
-    <Paper className={classes.paper1}>
+    <Paper className={classes.paper2} >
    
-  <Grid itme container justify="center" className={classes.imagecontainer55}>
+  <Grid item container justify="center" className={classes.imagecontainer10} >
       
-  <Carousel fade style={{width:"60%",height:"",marginTop:"50px"}}>
-    <Carousel.Item>
+  <Carousel fade style={{width:"100%"}}>
+    <Carousel.Item className={classes.paper2}>
       <img
         className="d-block w-100"
         src={sonet1}
         alt="First slide"
+       
       />
       <Carousel.Caption>
         <h3></h3>
