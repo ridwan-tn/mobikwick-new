@@ -1,7 +1,7 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 export const useStyles = makeStyles(theme => ({
-    root: {
+    root20: {
         padding: theme.spacing(2),
         marginLeft: "15em",
         marginTop: "-2em",
@@ -26,7 +26,7 @@ export const useStyles = makeStyles(theme => ({
           fontSize: "1em",
         },
       },
-      box1: {
+      box20: {
         [theme.breakpoints.down("xs")]: {
           flexWrap: "wrap",
           height: "100%",
@@ -38,7 +38,7 @@ export const useStyles = makeStyles(theme => ({
           marginTop: "-2.5em",
         },
       },
-      contentheading: {
+      contentheading20: {
         fontFamily: "Bahnschrift Light",
         fontSize: "1em",
         color: "black",
@@ -49,7 +49,7 @@ export const useStyles = makeStyles(theme => ({
           fontSize: "1em",
         },
       },
-      content: {
+      content20: {
         fontFamily: "Bahnschrift Light",
         fontSize: "0.9em",
         color: "grey",
@@ -78,4 +78,200 @@ export const useStyles = makeStyles(theme => ({
           fontSize: "1em",
         },
       },
+      // sonet style
+      root: {
+        flexGrow: 1,
+        width: '100%',
+        backgroundColor: "#002447",
+        color:"white",
+        maxWidth: 345,
+        
+        
+      },
+      tabContainer:{
+        textAlign:"center",
+       alignItems:"center",
+        justifyContent :"center",
+    },formControl: {
+      margin: theme.spacing(1),
+      minWidth: 120,
+    },
+    selectEmpty: {
+      marginTop: theme.spacing(2),
+    },
+    textfield:{
+      paddingLeft:"1.5em",
+       paddingRight:"1.5em",
+    
+      [theme.breakpoints.down("md")]:{
+       width:'100%',
+       paddingLeft:".5em",
+       paddingRight:".5em",
+       paddingTop:"",
+       paddingBottem:"1.5em",
+      },
+    
+      [theme.breakpoints.down("sm")]:{
+        width:'100%',
+        paddingLeft:".5em",
+        paddingRight:".5em",
+        paddingTop:"",
+        paddingBottem:"1.5em",
+      },
+    
+      [theme.breakpoints.down("xs")]:{
+        width:'100%',
+        paddingLeft:".5em",
+        paddingRight:".5em",
+        paddingTop:"",
+        paddingBottem:"1.5em",
+      }
+    },
+    tabbutton:{
+      paddingLeft:"1.5em",
+       paddingRight:"1.5em",
+    
+      [theme.breakpoints.down("md")]:{
+       width:'80%',
+       paddingLeft:"1.5em",
+       paddingRight:"1.5em",
+       paddingTop:"1em",
+       fontSize:"25px",
+       paddingBottem:"1.5em",
+       borderRadius:"8px",
+       height:"50px",
+      },
+    
+      [theme.breakpoints.down("sm")]:{
+        width:'80%',
+        paddingLeft:"1.5em",
+        paddingRight:"1.5em",
+        paddingTop:"1em",
+        fontSize:"15px",
+        paddingBottem:"1.5em",
+        borderRadius:"8px",
+        height:"50px",
+      },
+    
+      [theme.breakpoints.down("xs")]:{
+        width:'80%',
+        paddingLeft:"1.5em",
+        paddingRight:"1.5em",
+        paddingTop:"1em",
+        fontSize:"15px",
+        paddingBottem:"1.5em",
+        borderRadius:"8px",
+        height:"50px",
+      }
+    },
+    textcaption:{
+      paddingLeft:"1.5em",
+       paddingRight:"1.5em",
+      paddingBottom:"15px",
+      [theme.breakpoints.down("md")]:{
+       fontSize:"15px",
+       paddingLeft:"1.5em",
+       paddingRight:"1.5em",
+       paddingTop:"",
+       paddingBottem:"1.5em",
+      },
+    
+      [theme.breakpoints.down("sm")]:{
+        fontSize:"15px",
+        paddingLeft:"1.5em",
+        paddingRight:"1.5em",
+        paddingTop:"",
+        paddingBottom:"15px",
+      },
+    
+      [theme.breakpoints.down("xs")]:{
+        fontSize:"10px",
+        paddingLeft:"1.5em",
+        paddingRight:"1.5em",
+        paddingTop:"",
+        paddingBottom:"15px",
+      }
+    },
+    paper:{   
+      
+       width:'100%',
+       height:'',
+       textAlign:"center",
+      alignItems:"center",
+       justifyContent :"center",
+       backgroundColor:"#002447",
+      paddingLeft:"",
+      paddingRight:"",
+    
+    },
+    tabs:{
+      borderRadius:"0px",
+      backgroundColor:"#002447",
+      color:"white",
+      indicator:{
+        color:"white"
+      },
+    },
+    Head:{
+      fontSize:15,
+      color:"white",
+      marginTop:"50px",
+      marginLeft:"25px",
+      [theme.breakpoints.down("md")]:{
+        fontSize:"15px",
+        
+        paddingRight:"1.5em",
+        paddingTop:"",
+        color:"white",
+        paddingBottem:"1.5em",
+       },
+     
+       [theme.breakpoints.down("sm")]:{
+         fontSize:"15px",
+         
+         paddingRight:"1.5em",
+         paddingTop:"",
+         paddingBottem:"1.5em",
+         color:"white",
+       },
+     
+       [theme.breakpoints.down("xs")]:{
+         fontSize:"15px",
+         
+         paddingRight:"1.5em",
+         paddingTop:"",
+         paddingBottem:"1.5em",
+         color:"white",
+       },
+    },
+    PaperContainer:{
+      alignItems:"center",
+      justifyContent:"center",
+      width:'100%',
+      textAlign:"center",
+    
+       [theme.breakpoints.down("sm")]:{
+       textAlign:"center",
+       paddingLeft:"1.5em",
+       paddingRight:"1.5em",
+       },
+       [theme.breakpoints.down("xs")]:{
+       textAlign:"center",
+       paddingLeft:"1em",
+       paddingRight:"1em"
+       }
+     },
+    tabpanel:{
+      marginLeft:"10px",
+      marginTop:"10px",
+      marginRight:"10px",
+     paddingLeft:"1em",
+      backgroundColor:"white",
+      color:"black",
+      borderRadius:"10px",
+     
+     
+      
+    }
+      
 }));
