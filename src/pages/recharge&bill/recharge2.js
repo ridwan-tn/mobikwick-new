@@ -21,22 +21,17 @@ import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
-import Fade from '@material-ui/core/Fade';
+
 import TextField from '@material-ui/core/TextField';
-import pic from "../../assets/p2.png";
+
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
 
-import InputLabel from '@material-ui/core/InputLabel';
 import m2 from "../../assets/m2.png";
 
 import Button from '@material-ui/core/Button';
 import m4 from "../../assets/m4.png";
-import B11 from "../../assets/B11.jpeg";
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
+
 import landline from "../../assets/landline.jpg"
 import { Autocomplete } from '@material-ui/lab';
 import dcard from "../../assets/p1.svg" 
@@ -53,22 +48,16 @@ import googleplay from '../../assets/googleplay.png'
 import cable from '../../assets/cable.png'
 import insurance from '../../assets/insurance.jfif'
 
-import NativeSelect from '@material-ui/core/NativeSelect';
 import Avatar from  '@material-ui/core/Avatar';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import PersonPinIcon from '@material-ui/icons/PersonPin';
-import HelpIcon from '@material-ui/icons/Help';
-import ShoppingBasket from '@material-ui/icons/ShoppingBasket';
-import ThumbDown from '@material-ui/icons/ThumbDown';
-import ThumbUp from '@material-ui/icons/ThumbUp';
+
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import PhoneAndroidIcon from '@material-ui/icons/PhoneAndroid';
 import CreditCardIcon from '@material-ui/icons/CreditCard';
-import { orange } from "@material-ui/core/colors";
-import Link from '@material-ui/core/Link';
+
+import Modal from '@material-ui/core/Modal';
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -88,7 +77,20 @@ function TabPanel(props) {
     </div>
   );
 }
+function rand() {
+  return Math.round(Math.random() * 20) - 10;
+}
 
+function getModalStyle() {
+  const top = 50 + rand();
+  const left = 50 + rand();
+
+  return {
+    top: `${top}%`,
+    left: `${left}%`,
+    transform: `translate(-${top}%, -${left}%)`,
+  };
+}
 TabPanel.propTypes = {
   children: PropTypes.node,
   index: PropTypes.any.isRequired,
@@ -101,6 +103,7 @@ const AntTabs = withStyles({
   },
   indicator: {
     backgroundColor: '',
+    
   },
 })(Tabs);
 const AntTab = withStyles((theme) => ({
@@ -143,6 +146,15 @@ export default function Reacharge() {
   const[name,setName]=useState("Online prepaid mobile recharge");
   const[num,setSonet]=useState(0);
   const [age, setAge] = React.useState('');
+  const [count, setCount] = useState('');
+  const[d,setD]=useState(0);
+  // if(count==true){
+  // setD(10);
+  // }
+  if(count==10){
+    setD(<Footer/>)
+  }
+  
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -166,14 +178,30 @@ const handle=(event)=>{
     setValue(newValue);
     setValue1(newValue);
   };
-  const hand = () => {
-   <div style={{width:"100",height:"100",backgroundColor:"greenyellow", color:"white"}}>sonet
-
-    
-   </div>
-   
-  };
   
+
+const [todos, setTodos] = useState([
+  { id: 1, title: "Selectus aut autem", completed: false },
+  { id: 2, title: "Luis ut nam facilis et officia qui", completed: false },
+  { id: 3, title: "Fugiat veniam minus", completed: false },
+  { id: 4, title: "Aet porro tempora", completed: true },
+  { id: 5, title: "Laboriosam mollitia et enim quasi", completed: false }
+]);
+const [test,setTest]=useState('');
+const changeInput = (e) => {todos.map(items => items.id === parseInt(e.target.value) && (items.completed = e.target.checked));
+setTodos([...todos], todos);}
+const [form, setState] = useState({
+  username: '',
+  password: '',
+  offer1:'',
+  offer2:'',
+  offer3:'',
+
+});
+const[operator,setOperator]=useState('10');
+const[circle,setCircle]=useState('');
+const[amount,setAmount]=useState('');
+
   const handleClickmobile = () => setName("Online Prepaid Mobile Recharge")
   const sonet = () => setName()
   const handleClickdth = () => setName("DTH Reacharge")
@@ -208,9 +236,9 @@ const handle=(event)=>{
                        </Grid>
                        <Grid item md={6} xs={6} style={{float:"right"}}>
                        <Typography variant="body2" style={{color:"white",marginTop:"2em"}}>
-                       <Link href="#" onClick={preventDefault}>
+                       <a href="https://www.youtube.com/watch?v=uHQ-t6DjYOU" >
                                How it works ?
-                       </Link></Typography>
+                       </a></Typography>
 
                        </Grid>
                      </Grid>
@@ -221,9 +249,10 @@ const handle=(event)=>{
           value={value}
           onChange={handleChange}
           variant="scrollable"
-          
+         
           scrollButtons="on"
           indicatorColor="primary"
+          width="20px"
           textColor="white"
           fontSize="1%"
           backgroundColor="rgb(0,36,71)"
@@ -231,34 +260,34 @@ const handle=(event)=>{
           aria-label="scrollable force tabs example"
         >
            <AntTab    label="Mobile" icon={<Avatar style={{color:"rgb(38,157,228)",backgroundColor:"white",}}  alt="test avatar" ><PhoneAndroidIcon/></Avatar>} {...a11yProps(0)} 
-           style={{color:"white",fontSize:"10px"}}
+           style={{color:"white",fontSize:"10px",margin:"10px"}}
            onClick={handleClickmobile}/>  
             
          <AntTab  label="DTH" icon={<Avatar style={{backgroundColor:"white",size:"4px",color:"blue"}} 
-         alt="test avatar" src={m2}/>} {...a11yProps(1)}  style={{color:"white",fontSize:"10px"}} 
+         alt="test avatar" src={m2}/>} {...a11yProps(1)}  style={{color:"white",fontSize:"10px",margin:"10px"}} 
          onClick={handleClickdth}/>
          <AntTab label="Electricity" icon={<Avatar style={{backgroundColor:"white",padding:"3px",color:"white"}} 
-         alt="test avatar" src={m4}/>} {...a11yProps(2)} style={{color:"white",fontSize:"10px"}} 
+         alt="test avatar" src={m4}/>} {...a11yProps(2)} style={{color:"white",fontSize:"10px",margin:"10px"}} 
          onClick={handleClickelectricity}/>
       
          <AntTab label="Credit Card" icon={<Avatar style={{color:"rgb(38,157,228)",backgroundColor:"white"}}  
-         alt="test avatar" ><CreditCardIcon/></Avatar>}{...a11yProps(3)}  style={{color:"white",fontSize:"10px"}}
+         alt="test avatar" ><CreditCardIcon/></Avatar>}{...a11yProps(3)}  style={{color:"white",fontSize:"10px",margin:"10px"}}
          onClick={handleClickcreditcard}/> 
           <AntTab label="Data Card"  icon={<Avatar style={{color:"rgb(38,157,228)",backgroundColor:"white"}}  
-          alt="test avatar" src={dcard}></Avatar>}{...a11yProps(4)}  style={{color:"white",fontSize:"10px"}} 
+          alt="test avatar" src={dcard}></Avatar>}{...a11yProps(4)}  style={{color:"white",fontSize:"10px",margin:"10px"}} 
           onClick={handleClickdatacard}/>
           <AntTab label="Landline"  icon={<Avatar style={{color:"rgb(38,157,228)",backgroundColor:"white"}}  
-          alt="test avatar" src={landline}></Avatar>}{...a11yProps(5)}  style={{color:"white",fontSize:"10px"}} 
+          alt="test avatar" src={landline}></Avatar>}{...a11yProps(5)}  style={{color:"white",fontSize:"10px",margin:"10px"}} 
           onClick={handleClicklandline}/>
           <AntTab label="Broadband"icon={<Avatar style={{color:"rgb(38,157,228)",backgroundColor:"white"}}  
-          alt="test avatar" src={broadband}></Avatar>}{...a11yProps(6)}  style={{color:"white",fontSize:"10px"}} 
+          alt="test avatar" src={broadband}></Avatar>}{...a11yProps(6)}  style={{color:"white",fontSize:"10px",margin:"10px"}} 
           onClick={handleClickbroadband}/>
           <AntTab label="Piped gas"icon={<Avatar style={{color:"rgb(38,157,228)",backgroundColor:"white"}}  
-          alt="test avatar" src={gas}></Avatar>}{...a11yProps(7)}  style={{color:"white",fontSize:"10px"}} 
+          alt="test avatar" src={gas}></Avatar>}{...a11yProps(7)}  style={{color:"white",fontSize:"10px",margin:"10px"}} 
           onClick={handleClickpipedgas}/>
           
            <AntTab label="Insurance"  icon={<Avatar style={{color:"rgb(38,157,228)",backgroundColor:"white"}}  
-          alt="test avatar" src={insurance}></Avatar>}{...a11yProps(8)}  style={{color:"white",fontSize:"10px"}} 
+          alt="test avatar" src={insurance}></Avatar>}{...a11yProps(8)}  style={{color:"white",fontSize:"10px",margin:"10px"}} 
           onClick={handleClickinsurance}/>
           {(() => {
   
@@ -373,40 +402,124 @@ const handle=(event)=>{
         
         <Grid item container style={{justifyContent:"left",alignItems:"left"}} spacing={2}>
         <Grid item md={4} xs={1}>
-      <TextField id="outlined-basic" style={{ width:"100%",height:"50%" }}label=" ₹    Mobile Number"placeholder="  ₹  Amount" variant="outlined" />
+      <TextField inputProps={{ maxLength: 10 }}   style={{ width:"100%",height:"" }}placeholder="Number" variant="outlined" type="number" margin="dense"
+       required={true} maxLength={12} name="text1" 
+       onInput = {(e) =>{
+        e.target.value = Math.max(0, parseInt(e.target.value) ).toString().slice(0,10)
+    }}
+    onChange={e => {
+    if(  e.target.value.toString().length==10)
+    {
+      setCount(<Typography style={{color:"rgb(87,87,87)"}}>Best Recharge offers</Typography>)
+    // 
+      setState({
+        username:<Card className={classes.rechargecard1}>₹128
+      <br/> Special offer|Validty:28days</Card>,
+      password:<Card className={classes.rechargecard1}>₹129
+      <br/> Special offer:1Gb|Validty:24days</Card>,
+      offer1:<Card className={classes.rechargecard1}>₹149
+      <br/> Special offer:2Gb|Validty:28days</Card>,
+      offer2:<Card className={classes.rechargecard1}>₹199
+      <br/> Special offer:24Gb(1Gb/day)|Validty:24days</Card>,
+      offer3:<Card className={classes.rechargecard1}>₹219
+      <br/> Special offer:28Gb(1Gb/day)|Validty:28days</Card>,})
+      setTest(e.target.value)
+     
+    }
+    
+    else
+    {
+     setCount('')
+     setState('')
+      console.log("data size :", e.target.value.toString().length);
+    }
+      
+    }
+    }/>
+   
+
       </Grid>
         
          <Grid item md={2} xs={1}>
       <Autocomplete
       id="combo-box-demo"
-      disabled 
+      onChange={(event,value) => setOperator(value.title)}
+      options={operat}
       getOptionLabel={(option) => option.title}
       style={{ width:"100%" }}
-      renderInput={(params) => <TextField disabled {...params} label="Select Operator" variant="outlined" />}
+       renderInput={(params) => <TextField  {...params} placeholder="select operator" variant="outlined" margin="dense"
+       
+     />}
+     
     /> 
   
       </Grid>
+      
      
       <Grid item md={2} xs={1}>
       <Autocomplete
       id="combo-box-demo"
-      disabled 
+      onChange={(event,value) => setCircle(value.title)}
+      options={circ}
       getOptionLabel={(option) => option.title}
-      style={{ width:"100%" }}
-      renderInput={(params) => <TextField style={{ width:"100%" }}{...params} label="Select Circle" variant="outlined" />}
-    />     </Grid>
+      style={{ width: "100%" }}
+      renderInput={(params) => <TextField {...params} placeholder="select circle" variant="outlined"  margin="dense"/>}
+    />
+          </Grid>
     
     <Grid item md={2} xs={1}>
-      <TextField id="outlined-basic" style={{ width:"100%" }}label=" ₹    Amount"placeholder="  ₹  Amount" variant="outlined" />
+      <TextField id="outlined-basic" style={{ width:"100%" }}placeholder="  ₹  Amount" variant="outlined"  margin="dense" type="number"
+      onChange={(event)=>setAmount(event.target.value)}/>
       </Grid>
 
       <Grid item md={1} xs={1}>
       
-      <button style={{backgroundColor:"rgb(178,178,178)",width:"75px",height:"60px",borderRadius:"10px",
-      color:"white",fontSize:"25px"}}>Go</button>
+      <Button
+        variant="contained"
+      
+        color="rgb(149,149,149)"
+        className={classes.button}
+         style={{width:"75px",height:'44px',color:"white"}}
+         
+      >
+        {(() => {
+          if(amount==''){
+            console.log('not entry')
+          }
+         })}
+        Go
+      </Button>
       </Grid>
         </Grid>
+       
+        <Grid item container style={{marginTop:"10px"}}>
+        <Grid>
+        {count}
+        </Grid>
+        </Grid>
+       
+      
         
+     
+   
+        <Grid item container >
+        <Grid md={2}>
+        {form.username}
+        </Grid>
+        <Grid md={3}>
+        {form.password}
+        </Grid>
+        <Grid md={3}>
+        {form.offer1}
+        </Grid>
+        <Grid md={3}>
+        {form.offer2}
+        </Grid>
+        <Grid md={3}style={{marginTop:"9px"}}>
+        {form.offer3}
+        </Grid>
+        </Grid>
+       {test}{operator}{circle}{amount}
        </TabPanel>
       <TabPanel value={value} className={classes.tabpanel} style={{marginRight:"10px"}} index={1}>{/*DTH*/}
       <Grid item container style={{textAlign:"left"}} spacing={2}>
@@ -420,7 +533,7 @@ const handle=(event)=>{
        
       </Grid>
       <Grid item md={3} >
-      <Typography className={classes.Textcaption}>Amount</Typography>
+      <Typography className={classes.Textcaption} style={{marginLeft:"20px"}}>Amount</Typography>
       </Grid>
       </Grid>
       <Grid item container style={{justifyContent:"left",alignItems:"left"}} spacing={2}>
@@ -430,21 +543,29 @@ const handle=(event)=>{
       options={top100}
       getOptionLabel={(option) => option.title}
       style={{ width: "100%" }}
-      renderInput={(params) => <TextField {...params} label="Airtel TV" variant="outlined" />}
+      renderInput={(params) => <TextField {...params} placeholder="Airtel TV" variant="outlined" margin="dense"/>}
     />
   
       </Grid>
       <Grid item md={3} >
-      <TextField id="outlined-basic" placeholder="Mobile Number./Consumer Number" variant="outlined" style={{width:"100%"}}/> 
+      <TextField id="outlined-basic" placeholder="Mobile Number./Consumer Number" variant="outlined" style={{width:"100%"}} margin="dense"/> 
   
       </Grid>
       <Grid item md={3} xs={2}>
-      <TextField id="outlined-basic" label=" ₹    Amount"placeholder="  ₹  Amount" variant="outlined" />
+      <TextField id="outlined-basic" placeholder="  ₹  Amount" variant="outlined" margin="dense"/>
       </Grid>
       <Grid item md={2} xs={2}>
       
-      <button style={{backgroundColor:"rgb(178,178,178)",width:"100px",height:"60px",borderRadius:"10px",
-      color:"white",fontSize:"25px"}} >Go</button>
+      <Button
+        variant="contained"
+      
+        color="rgb(149,149,149)"
+        className={classes.button}
+         style={{width:"75px",height:'44px',color:"white"}}
+      >
+        {}
+        Go
+      </Button>
       </Grid>
       
       </Grid>
@@ -469,18 +590,25 @@ const handle=(event)=>{
       options={top100Films}
       getOptionLabel={(option) => option.title}
       style={{ width: "100%"}}
-      renderInput={(params) => <TextField {...params} label="Adani Electricity Mumbai Limited" variant="outlined" />}
+      renderInput={(params) => <TextField {...params} placeholder="Adani Electricity Mumbai Limited" variant="outlined" margin="dense"/>}
     />
     
        
       </Grid>
       <Grid item md={5} >
       
-      <TextField id="outlined-basic" label="Consumer Number "placeholder="Consumer Number" variant="outlined" style={{width:"100%"}}/>
+      <TextField id="outlined-basic" placeholder="Consumer Number" variant="outlined" style={{width:"100%"}} margin="dense"/>
       </Grid>
       <Grid item md={2} xs={2}style={{float:"left"}}>
-      <button style={{backgroundColor:"rgb(178,178,178)",width:"75%",height:"55px",borderRadius:"10px",
-      color:"white",fontSize:"25px"}} >Go</button>
+      <Button
+        variant="contained"
+      
+        color="rgb(149,149,149)"
+        className={classes.button}
+         style={{width:"75px",height:'44px',color:"white"}}
+      >
+        Go
+      </Button>
        
       </Grid>
       
@@ -500,22 +628,29 @@ const handle=(event)=>{
       </Grid>
       </Grid><Grid item container style={{justifyContent:"left",alignItems:"left"}} spacing={2}>
       <Grid item md={5} style={{float:"left"}}>
-      <TextField id="outlined-basic" label=" Credit Card Number"placeholder="Credit Card Number" variant="outlined" style={{width:"100%"}}/>
+      <TextField id="outlined-basic" placeholder="Credit Card Number" variant="outlined" style={{width:"100%"}} margin="dense"/>
        
       </Grid>
       <Grid item md={5} xs={6}style={{float:"left"}}>
-      <TextField id="outlined-basic" label=" ₹ Bill Amount"placeholder="Bill Amount" variant="outlined" style={{width:"100%"}}/>
+      <TextField id="outlined-basic" placeholder="Bill Amount" variant="outlined" style={{width:"100%"}} margin="dense"/>
        
       </Grid>
       <Grid item md={2} xs={2}style={{float:"left"}}>
-      <button style={{backgroundColor:"rgb(178,178,178)",width:"100px",height:"60px",borderRadius:"10px",
-      color:"white",fontSize:"25px"}} >Go</button>
+      <Button
+        variant="contained"
+      
+        color="rgb(149,149,149)"
+        className={classes.button}
+         style={{width:"75px",height:'44px',color:"white"}}
+      >
+        Go
+      </Button>
        
       </Grid>
       </Grid>
       </TabPanel>
       <TabPanel value={value}className={classes.tabpanel} index={4}>{/*DATACARD*/}
-      <Grid item container style={{textAlign:"left"}}>
+      <Grid item container spacing={2} style={{textAlign:"left"}}>
       <Grid item md={3} >
        <Typography className={classes.Textcaption}>Data Card Number</Typography>
        
@@ -534,7 +669,7 @@ const handle=(event)=>{
         </Grid>
         <Grid item container style={{justifyContent:"left",alignItems:"left"}} spacing={2}>
       <Grid item md={3} >
-      <TextField id="outlined-basic"  placeholder="Data Card Number " variant="outlined"  style={{width:"100%"}}/>
+      <TextField id="outlined-basic"  placeholder="Data Card Number " variant="outlined"  style={{width:"100%"}} margin="dense"/>
       
        
       </Grid>
@@ -544,7 +679,7 @@ const handle=(event)=>{
       disabled
       getOptionLabel={(option) => option.title}
       style={{ width: "100%"}}
-      renderInput={(params) => <TextField {...params} label="Idea Netsetter" variant="outlined" />}
+      renderInput={(params) => <TextField {...params} label="Idea Netsetter" variant="outlined" margin="dense"/>}
     /> 
   
       </Grid>
@@ -554,22 +689,28 @@ const handle=(event)=>{
       disabled
       getOptionLabel={(option) => option.title}
       style={{ width: "100%"}}
-      renderInput={(params) => <TextField {...params} label="Select Circle" variant="outlined" />}
+      renderInput={(params) => <TextField {...params} placeholder="Select Circle" variant="outlined" margin="dense"/>}
     />      
       </Grid>
-      <Grid item md={3} >
-      <TextField id="outlined-basic" label=" ₹    Amount"placeholder="  ₹  Amount" variant="outlined" />
+      <Grid item md={2} >
+      <TextField id="outlined-basic" placeholder="  ₹  Amount" variant="outlined" margin="dense"/>
       </Grid>
       <Grid item md={2} >
+      <Button
+        variant="contained"
       
-      <button style={{backgroundColor:"rgb(178,178,178)",width:"100px",height:"60px",borderRadius:"10px",
-      color:"white",fontSize:"25px"}}>Go</button>
+        color="rgb(149,149,149)"
+        className={classes.button}
+         style={{width:"75px",height:'44px',color:"white"}}
+      >
+        Go
+      </Button>
       </Grid>
         </Grid>
         
       </TabPanel>
       <TabPanel value={value}className={classes.tabpanel} index={5}>{/*LANDLINE*/}
-      <Grid item container style={{textAlign:"left"}}>
+      <Grid item container  spacing={2} style={{textAlign:"left"}}>
       <Grid item md={5} >
       <Typography className={classes.Textcaption}> Operator</Typography>
        
@@ -587,18 +728,25 @@ const handle=(event)=>{
       options={top10}
       getOptionLabel={(option) => option.title}
       style={{ width:"100%" }}
-      renderInput={(params) => <TextField {...params} label="Airtel Landline" variant="outlined" />}
+      renderInput={(params) => <TextField {...params} placeholder="Airtel Landline" variant="outlined" margin="dense"/>}
     />
     
        
       </Grid>
       <Grid item md={5} >
       
-      <TextField id="outlined-basic" label=" Landline Number (with STD Code) "placeholder=" Landline Number (with Std code)" variant="outlined" style={{width:"100%"}}/>
+      <TextField id="outlined-basic" placeholder=" Landline Number (with Std code)" variant="outlined" style={{width:"100%"}} margin="dense"/>
       </Grid>
       <Grid item md={2} >
-      <button style={{backgroundColor:"rgb(178,178,178)",width:"100px",height:"50px",borderRadius:"10px",
-      color:"white",fontSize:"25px"}} >Go</button>
+      <Button
+        variant="contained"
+      
+        color="rgb(149,149,149)"
+        className={classes.button}
+         style={{width:"75px",height:'44px',color:"white"}}
+      >
+        Go
+      </Button>
        
       </Grid>
       
@@ -623,25 +771,32 @@ const handle=(event)=>{
       options={topland}
       getOptionLabel={(option) => option.title}
       style={{ width: "100%" }}
-      renderInput={(params) => <TextField {...params} label="Act Fibernat" variant="outlined" />}
+      renderInput={(params) => <TextField {...params} placeholder="Act Fibernat" variant="outlined" margin="dense"/>}
     />
     
        
       </Grid>
       <Grid item md={5} >
       
-      <TextField id="outlined-basic" label=" Account Number/User Name "placeholder=" Landline Number (with Std code)" variant="outlined" style={{width:"100%"}}/>
+      <TextField id="outlined-basic" placeholder=" Landline Number (with Std code)" variant="outlined" style={{width:"100%"}} margin="dense"/>
       </Grid>
       <Grid item md={2} >
-      <button style={{backgroundColor:"rgb(178,178,178)",width:"100px",height:"50px",borderRadius:"10px",
-      color:"white",fontSize:"25px"}} >Go</button>
+      <Button
+        variant="contained"
+      
+        color="rgb(149,149,149)"
+        className={classes.button}
+         style={{width:"75px",height:'44px',color:"white"}}
+      >
+        Go
+      </Button>
        
       </Grid>
       
       </Grid>
       </TabPanel>
       <TabPanel value={value}className={classes.tabpanel} index={7}>{/*PIPED GAS*/}
-      <Grid item container style={{textAlign:"left"}}>
+      <Grid item container style={{textAlign:"left"}} spacing={2}>
       <Grid item md={5} >
        <Typography className={classes.Textcaption}> Operator</Typography>
        
@@ -660,18 +815,25 @@ const handle=(event)=>{
       options={toppipe}
       getOptionLabel={(option) => option.title}
       style={{ width: "100%" }}
-      renderInput={(params) => <TextField {...params} label="Adani Gas" variant="outlined" />}
+      renderInput={(params) => <TextField {...params} placeholder="Adani Gas" variant="outlined" margin="dense"/>}
     />
     
        
       </Grid>
       <Grid item md={5} >
       
-      <TextField id="outlined-basic" label=" Customer ID "placeholder="Customer ID " variant="outlined" style={{width:"100%"}}/>
+      <TextField id="outlined-basic" placeholder="Customer ID " variant="outlined" style={{width:"100%"}} margin="dense"/>
       </Grid>
       <Grid item md={2} xs={2}style={{float:"left"}}>
-      <button style={{backgroundColor:"rgb(178,178,178)",width:"100px",height:"50px",borderRadius:"10px",
-      color:"white",fontSize:"25px"}} >Go</button>
+      <Button
+        variant="contained"
+      
+        color="rgb(149,149,149)"
+        className={classes.button}
+         style={{width:"75px",height:'44px',color:"white"}}
+      >
+        Go
+      </Button>
        
       </Grid>
       
@@ -706,28 +868,35 @@ const handle=(event)=>{
       options={insurance1}
       getOptionLabel={(option) => option.title}
       style={{ width: "100%"}}
-      renderInput={(params) => <TextField {...params} label=" Insurance Coperations" variant="outlined" />}
+      renderInput={(params) => <TextField {...params} placeholder=" Insurance Coperations" variant="outlined" margin="dense"/>}
     /> 
        
       </Grid>
       <Grid item md={2} >
       
-      <TextField id="outlined-basic"  placeholder="POLICY No " variant="outlined" rowsMax="20" style={{width:"100%"}}/>&nbsp;&nbsp;
+      <TextField id="outlined-basic"  placeholder="POLICY No " variant="outlined" rowsMax="20" style={{width:"100%"}} margin="dense"/>&nbsp;&nbsp;
       
   
       </Grid>
       <Grid item md={2} >
       
-      <TextField id="outlined-basic"  placeholder="Date Of Birth " variant="outlined" rowsMax="20" style={{width:"100%"}}/>&nbsp;&nbsp;
+      <TextField id="outlined-basic"  placeholder="Date Of Birth " variant="outlined" rowsMax="20" style={{width:"100%"}} margin="dense"/>&nbsp;&nbsp;
         
       </Grid>
       <Grid item md={2} >
-      <TextField id="outlined-basic" label="Mobile Number"placeholder=" Mobile Number" variant="outlined" />
+      <TextField id="outlined-basic" placeholder=" Mobile Number" variant="outlined" margin="dense"/>
       </Grid>
       <Grid item md={2} >
       
-      <button style={{backgroundColor:"rgb(178,178,178)",width:"100px",height:"50px",borderRadius:"10px",
-      color:"white",fontSize:"25px"}}>Go</button>
+      <Button
+        variant="contained"
+      
+        color="rgb(149,149,149)"
+        className={classes.button}
+         style={{width:"75px",height:'44px',color:"white"}}
+      >
+        Go
+      </Button>
       </Grid>
         </Grid>
       
@@ -747,17 +916,24 @@ const handle=(event)=>{
       <Grid item container spacing={2}>
       <Grid item md={5} >
      
-      <TextField id="outlined-basic" label=" Mumbai Metro "placeholder="Mumbai Metro " variant="outlined" style={{width:"100%"}}/>
+      <TextField id="outlined-basic" placeholder="Mumbai Metro " variant="outlined" style={{width:"100%"}} margin="dense"/>
     
        
       </Grid>
       <Grid item md={5} >
       
-      <TextField id="outlined-basic" label=" Card Number"placeholder="Card Number" variant="outlined" style={{width:"100%"}}/>
+      <TextField id="outlined-basic"placeholder="Card Number" variant="outlined" style={{width:"100%"}} margin="dense"/>
       </Grid>
       <Grid item md={2} >
-      <button style={{backgroundColor:"rgb(178,178,178)",width:"100px",height:"60px",borderRadius:"10px",
-      color:"white",fontSize:"25px"}} >Go</button>
+      <Button
+        variant="contained"
+      
+        color="rgb(149,149,149)"
+        className={classes.button}
+         style={{width:"75px",height:'44px',color:"white"}}
+      >
+        Go
+      </Button>
        
       </Grid>
       
@@ -782,18 +958,25 @@ const handle=(event)=>{
       options={topwater}
       getOptionLabel={(option) => option.title}
       style={{ width: "100%" }}
-      renderInput={(params) => <TextField {...params} label="AAVAS FINANCIERS LIMITED" variant="outlined" />}
+      renderInput={(params) => <TextField {...params} placeholder="AAVAS FINANCIERS LIMITED" variant="outlined" margin="dense"/>}
     />
     
        
       </Grid>
       <Grid item md={5} >
       
-      <TextField id="outlined-basic" label="Loan Number"placeholder="Loan Number" variant="outlined" style={{width:"100%"}}/>
+      <TextField id="outlined-basic" placeholder="Loan Number" variant="outlined" style={{width:"100%"}} margin="dense"/>
       </Grid>
       <Grid item md={2} >
-      <button style={{backgroundColor:"rgb(178,178,178)",width:"100px",height:"50px",borderRadius:"10px",
-      color:"white",fontSize:"25px"}} >Go</button>
+      <Button
+        variant="contained"
+      
+        color="rgb(149,149,149)"
+        className={classes.button}
+         style={{width:"75px",height:'44px',color:"white"}}
+      >
+        Go
+      </Button>
        
       </Grid>
       
@@ -814,17 +997,24 @@ const handle=(event)=>{
       <Grid item container spacing={2}>
       <Grid item md={5} >
      
-      <TextField id="outlined-basic" label=" Google Play Reacharge Code"placeholder="Google Play Reacharge Code " variant="outlined" style={{width:"100%"}}/>
+      <TextField id="outlined-basic" placeholder="Google Play Reacharge Code " variant="outlined" style={{width:"100%"}} margin="dense"/>
     
        
       </Grid>
       <Grid item md={5} >
       
-      <TextField id="outlined-basic" label=" ₹Amount( ₹100- ₹1500)"placeholder="₹Amount( ₹100- ₹1500)" variant="outlined" style={{width:"100%"}}/>
+      <TextField id="outlined-basic" placeholder="₹Amount( ₹100- ₹1500)" variant="outlined" style={{width:"100%"}} margin="dense"/>
       </Grid>
       <Grid item md={2} >
-      <button style={{backgroundColor:"rgb(178,178,178)",width:"100px",height:"60px",borderRadius:"10px",
-      color:"white",fontSize:"25px"}} >Go</button>
+      <Button
+        variant="contained"
+      
+        color="rgb(149,149,149)"
+        className={classes.button}
+         style={{width:"75px",height:'44px',color:"white"}}
+      >
+        Go
+      </Button>
        
       </Grid>
       
@@ -857,19 +1047,25 @@ const handle=(event)=>{
       options={topcable}
       getOptionLabel={(option) => option.title}
       style={{ width: "100%" }}
-      renderInput={(params) => <TextField {...params} label="Asianet Digital" variant="outlined" />}
+      renderInput={(params) => <TextField {...params} placeholder="Asianet Digital" variant="outlined" margin="dense" />}
     />
     
        
       </Grid>
       <Grid item md={5}>
       
-      <TextField id="outlined-basic" label=" Subscriber Code"placeholder="Subscriber Code" variant="outlined" style={{width:"100%"}}/>
+      <TextField id="outlined-basic" placeholder="Subscriber Code" variant="outlined" style={{width:"100%"}} margin="dense"/>
       </Grid>
       <Grid item md={2} >
-      <button style={{backgroundColor:"rgb(178,178,178)",width:"100px",height:"60px",borderRadius:"10px",
-      color:"white",fontSize:"25px"}} >Go</button>
-       
+      <Button
+        variant="contained"
+      
+        color="rgb(149,149,149)"
+        className={classes.button}
+         style={{width:"75px",height:'44px',color:"white"}}
+      >
+        Go
+      </Button>
       </Grid>
       
       </Grid>
@@ -892,18 +1088,25 @@ const handle=(event)=>{
       options={topmuncipality}
       getOptionLabel={(option) => option.title}
       style={{ width: "100%"}}
-      renderInput={(params) => <TextField {...params} label="Ahamedabad Muncipal Corporation" variant="outlined" />}
+      renderInput={(params) => <TextField {...params} placeholder="Ahamedabad Muncipal Corporation" variant="outlined" margin="dense" />}
     />
     
        
       </Grid>
       <Grid item md={5} >
       
-      <TextField id="outlined-basic" label=" Tenament No"placeholder="Tenament No" variant="outlined" style={{width:"100%"}}/>
+      <TextField id="outlined-basic" placeholder="Tenament No" variant="outlined" style={{width:"100%"}}margin="dense"/>
       </Grid>
       <Grid item md={2} >
-      <button style={{backgroundColor:"rgb(178,178,178)",width:"100px",height:"55px",borderRadius:"10px",
-      color:"white",fontSize:"25px"}} >Go</button>
+      <Button
+        variant="contained"
+      
+        color="rgb(149,149,149)"
+        className={classes.button}
+         style={{width:"75px",height:'44px',color:"white"}}
+      >
+        Go
+      </Button>
        
       </Grid>
       
@@ -927,18 +1130,26 @@ const handle=(event)=>{
       options={topemi}
       getOptionLabel={(option) => option.title}
       style={{ width: "100%" }}
-      renderInput={(params) => <TextField {...params} label="AAVAS FINANCIERS LIMITED" variant="outlined" />}
+      renderInput={(params) => <TextField {...params} placeholder="AAVAS FINANCIERS LIMITED" variant="outlined" margin="dense"/>}
     />
     
        
       </Grid>
       <Grid item md={5} >
       
-      <TextField id="outlined-basic" label=" Tenament No"placeholder="Loan Number" variant="outlined" style={{width:"100%"}}/>
+      <TextField id="outlined-basic" placeholder="Loan Number" variant="outlined" style={{width:"100%"}} margin="dense"/>
       </Grid>
       <Grid item md={2} >
-      <button style={{backgroundColor:"rgb(178,178,178)",width:"100px",height:"60px",borderRadius:"10px",
-      color:"white",fontSize:"25px"}} >Go</button>
+      <Button
+        variant="contained"
+      
+        color="rgb(149,149,149)"
+        className={classes.button}
+         style={{width:"75px",height:'44px',color:"white"}}
+      >
+        Go
+      </Button>
+       
        
       </Grid>
       
@@ -961,16 +1172,22 @@ const handle=(event)=>{
       <Grid item md={5} >
      
     
-      <TextField id="outlined-basic" label=" AndraPradesh Traffic POlice"placeholder="AndraPradesh Traffic POlice" variant="outlined" style={{width:"100%"}}/>
+      <TextField id="outlined-basic" placeholder="AndraPradesh Traffic Police" variant="outlined" style={{width:"100%"}} margin="dense"/>
       </Grid>
       <Grid item md={4} xs={4}style={{float:"left"}}>
       
-      <TextField id="outlined-basic" label=" RC/DL/Challan Number"placeholder="RC/DL/Challan Number" variant="outlined" style={{width:"100%"}}/>
+      <TextField id="outlined-basic" placeholder="RC/DL/Challan Number" variant="outlined" style={{width:"100%"}}margin="dense"/>
       </Grid>
       <Grid item md={3} xs={3}style={{float:"left"}}>
-      <button style={{backgroundColor:"rgb(178,178,178)",width:"100px",height:"55px",borderRadius:"10px",
-      color:"white",fontSize:"25px"}} >Go</button>
-       
+      <Button
+        variant="contained"
+      
+        color="rgb(149,149,149)"
+        className={classes.button}
+         style={{width:"75px",height:'44px',color:"white"}}
+      >
+        Go
+      </Button>
       </Grid>
       
       </Grid>
@@ -1001,7 +1218,7 @@ const handle=(event)=>{
       options={topcity}
       getOptionLabel={(option) => option.title}
       style={{ width: "100%" }}
-      renderInput={(params) => <TextField {...params} label="City" variant="outlined" />}
+      renderInput={(params) => <TextField {...params} placeholder="City" variant="outlined" margin="dense"/>}
     /> 
        
       </Grid>
@@ -1011,7 +1228,7 @@ const handle=(event)=>{
       options={topsociety}
       getOptionLabel={(option) => option.title}
       style={{ width: "100%" }}
-      renderInput={(params) => <TextField {...params} label="Society Name" variant="outlined" />}
+      renderInput={(params) => <TextField {...params} placeholder="Society Name" variant="outlined" margin="dense"/>}
     /> 
   
       </Grid>
@@ -1021,16 +1238,23 @@ const handle=(event)=>{
       options={topservice}
       getOptionLabel={(option) => option.title}
       style={{ width: "100%" }}
-      renderInput={(params) => <TextField {...params} label="Service Type" variant="outlined" />}
+      renderInput={(params) => <TextField {...params} placeholder="Service Type" variant="outlined" margin="dense"/>}
     />     
       </Grid>
       <Grid item md={2} >
-      <TextField id="outlined-basic" label=" ₹    Amount"placeholder="  ₹  Amount" variant="outlined" />
+      <TextField id="outlined-basic" placeholder="  ₹  Amount" variant="outlined" margin="dense"/>
       </Grid>
       <Grid item md={2} >
       
-      <button style={{backgroundColor:"rgb(178,178,178)",width:"100px",height:"60px",borderRadius:"10px",
-      color:"white",fontSize:"25px"}}>Go</button>
+      <Button
+        variant="contained"
+      
+        color="rgb(149,149,149)"
+        className={classes.button}
+         style={{width:"75px",height:'44px',color:"white"}}
+      >
+        Go
+      </Button>
       </Grid>
         </Grid>
       </TabPanel>
@@ -1054,18 +1278,25 @@ const handle=(event)=>{
       options={toplpg}
       getOptionLabel={(option) => option.title}
       style={{ width:"100%" }}
-      renderInput={(params) => <TextField {...params} label="Bharath Petrolium Coperation Limited(BPCL)" variant="outlined" />}
+      renderInput={(params) => <TextField {...params} placeholder="Bharath Petrolium Coperation Limited(BPCL)" variant="outlined" margin="dense" />}
     />
     
        
       </Grid>
       <Grid item md={5} >
       
-      <TextField id="outlined-basic" label=" Registered Contact Number"placeholder=" Registered Contact Number" variant="outlined" style={{width:"100%"}}/>
+      <TextField id="outlined-basic" placeholder=" Registered Contact Number" variant="outlined" style={{width:"100%"}}margin="dense"/>
       </Grid>
       <Grid item md={2} >
-      <button style={{backgroundColor:"rgb(178,178,178)",width:"100px",height:"60px",borderRadius:"10px",
-      color:"white",fontSize:"25px"}} >Go</button>
+      <Button
+        variant="contained"
+      
+        color="rgb(149,149,149)"
+        className={classes.button}
+         style={{width:"75px",height:'44px',color:"white"}}
+      >
+        Go
+      </Button>
        
       </Grid>
       
@@ -1378,7 +1609,7 @@ const handle=(event)=>{
           </Box>
         </Box>
       </Box>
-      <Footer/>
+      
       </div>
       </div>
   );
@@ -1412,17 +1643,17 @@ const top100Films = [
     {title:'Mysoore'},
     {title:'Baroda'},];
     const topsociety=[
-      {title:'Airtel DTH'},
-      {title:'Sun Direct'},
-      {title:'Tata Sky'},
-      {title:'d2h'},
-      {title:'Dish Tv'},];
+      {title:'Amruth paerl building no3'},
+      {title:'Amruth paerl building no4'},
+      {title:'megha mailhar '},
+      {title:'megha malhar apartment 4'},
+      {title:'Sai sathyam'},];
       const topservice=[
-        {title:'Airtel DTH'},
-        {title:'Sun Direct'},
-        {title:'Tata Sky'},
-        {title:'d2h'},
-        {title:'Dish Tv'},];
+        {title:'Maintanace'},
+        {title:'Plumping'},
+        {title:'Wiring'},
+        {title:'Costruction'},
+        {title:'Rooofing'},];
   const topmuncipality=[
     {title:'Ahemadabad Muncipal Corpration'},
     {title:' Chennai Muncipal Corpration'},
@@ -1491,3 +1722,20 @@ const top100Films = [
     { title: 'The Shawshank Redemption', year: 1994 },
  
   ];
+  const operat=[
+    {title:'Bsnl'},
+    {title:'vi'},
+    {title:'jio'},
+    {title:'Airtel'}
+  ]
+  const circ=[
+    {title:'Kerala'},
+    {title:'Kolkatta'},
+    {title:'Utter predesh'},
+    {title:'Madhya Predesh'},
+    {title:'Karnataka'},
+    {title:'Tamil Nadu'},
+    {title:'Jammu & Kashmir'},
+    {title:'Pune'},
+    
+  ]

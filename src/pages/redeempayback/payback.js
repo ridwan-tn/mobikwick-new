@@ -326,7 +326,7 @@ Follow the following steps to convert upto 400 points into cash in a calendar mo
      </Grid>
      </Grid>
      
-     <Footer/>
+    
     </div>
   );
 }

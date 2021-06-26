@@ -102,9 +102,9 @@ export const useStyles1 = makeStyles(theme => ({
     },
     paper:{   
       marginLeft:"50px",
-      margin:"1px",
+      
        width:'100%',
-       height:'325px',
+       height:'',
        textAlign:"center",
       alignItems:"center",
        justifyContent :"center",
@@ -148,13 +148,31 @@ export const useStyles1 = makeStyles(theme => ({
       backgroundColor:"white",
       color:"black",
       borderRadius:"4px",
-      height:"125px",
+      height:"",
       
     },
     Textcaption:{
     fontSize:"10px",
-    marginBottom:"10px",
+    marginBottom:"1px",
     color:"rgb(119,119,119)",
     
+    },
+    rechargecard1:{
+      width:"",
+      height:"50px",
+      color:"rgb(88,88,88)",
+      fontSize:"12px",
+      backgroundColor:"rgb(245,245,245)",
+      textAlign:"left",
+      padding:"10px",
+      margin:"5px"
+    },
+    paper22: {
+      position: 'absolute',
+      width: 400,
+      backgroundColor: theme.palette.background.paper,
+      border: '2px solid #000',
+      boxShadow: theme.shadows[5],
+      padding: theme.spacing(2, 4, 3),
     },
 }));

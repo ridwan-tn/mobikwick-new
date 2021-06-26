@@ -19,6 +19,10 @@ import Career from "../pages/career/career";
 import About from "../pages/About/about";
 import Contact from "../pages/contact/contact";
 import Sitemap from "../pages/sitemap/sitemap";
+import Rbsnl from "../Components/Footer/Fbsnlreacharge";
+import RVi from "../Components/Footer/Fvireacharge"
+import Rmntl from '../Components/Footer/Fmntlreacharge'
+import Rji from '../Components/Footer/Fjioreacharge'
 export default function main() {
   return (
     <div>
@@ -61,8 +65,40 @@ export default function main() {
           />
           <div style={{width:"84%",float:"right",marginBottom:"100px"}}>
          <Route exact path="/electricity-payment/avvnl" component={ ElectricityPayment } />	
+         <Route
+            exact
+            path="/bsnl"
+            render={(props) => <Rbsnl {...props} />}
+          /> 
+          <Route
+            exact
+          path="/Vodafone"
+          render={(props) => <RVi {...props} />}
+        />
+        <Route
+            exact
+          path="/Mntl"
+          render={(props) => <Rmntl {...props} />}
+        />
+          <Route
+            exact
+          path="/Jio"
+          render={(props) => <Rji {...props} />}
+        />
+         <Route
+            exact
+          path="/About"
+          render={(props) => <About {...props} />}
+        />
+         <Route
+            exact
+          path="/Carrer"
+          render={(props) => <Career {...props} />}
+        />
+         
         </div>
         </Switch>
+        
       </BrowserRouter>
     </div>
   );

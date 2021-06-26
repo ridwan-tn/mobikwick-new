@@ -322,7 +322,7 @@ const handle=(event)=>{
      <Grid item container justify="center" style={{display:"block"}}>
      <Grid style={{textAlign:"left"}}>
       <Typography className={classes.textcaption}>Mobile Number</Typography>
-      <TextField className={classes.textfield} id="outlined-basic"  placeholder="Mobile Number " variant="outlined" />&nbsp;&nbsp;
+      <TextField className={classes.textfield} id="outlined-basic"  placeholder="Mobile Number " variant="outlined" margin="dense"/>&nbsp;&nbsp;
      </Grid>
      <Grid style={{display:"none"}}>
       Select Operator
@@ -331,7 +331,7 @@ const handle=(event)=>{
     
      getOptionLabel={(option) => option.title}
      style={{ width: 250 }}
-     renderInput={(params) => <TextField {...params} label="Select Operator" variant="outlined" />}
+     renderInput={(params) => <TextField {...params} placeholder="Select Operator" variant="outlined" margin="dense"/>}
    /> 
  
      </Grid>
@@ -344,14 +344,14 @@ const handle=(event)=>{
      
      getOptionLabel={(option) => option.title}
      style={{ width: 250 }}
-     renderInput={(params) => <TextField {...params} label="Select Circle" variant="outlined" />}
+     renderInput={(params) => <TextField {...params} placeholder="Select Circle" variant="outlined" margin="dense"/>}
    />      &nbsp;&nbsp; 
      
      </Grid>
      <Grid style={{display:"none"}}>
      ₹    Amount 
      <br/>
-     <TextField id="outlined-basic" label=" ₹    Amount"placeholder="  ₹  Amount" variant="outlined" rowsMax="20"style={{width:"80%"}}/>
+     <TextField id="outlined-basic" placeholder="  ₹  Amount" variant="outlined" rowsMax="20"style={{width:"80%"}} margin="dense"/>
      </Grid>
      <Grid>
      <button className={classes.tabbutton}style={{backgroundColor:"rgb(178,178,178)",
@@ -370,20 +370,20 @@ const handle=(event)=>{
      options={top100}
      getOptionLabel={(option) => option.title}
     
-     renderInput={(params) => <TextField  className={classes.textfield} {...params}placeholder="Airtel TV" variant="outlined" />}
+     renderInput={(params) => <TextField  className={classes.textfield} {...params}placeholder="Airtel TV" variant="outlined" margin="dense"/>}
    />
      </Grid>
     <br/>
      <Grid style={{textAlign:"left"}}>
       
       <Typography className={classes.textcaption}>Mobile Number./Consumer Number</Typography>
-      <TextField className={classes.textfield} id="outlined-basic" placeholder="Mobile Number./Consumer Number" variant="outlined" /> 
+      <TextField className={classes.textfield} id="outlined-basic" placeholder="Mobile Number./Consumer Number" variant="outlined" margin="dense"/> 
      </Grid>
      <Grid style={{textAlign:"left"}}>
      <br/>
      <Typography className={classes.textcaption}> Amount</Typography>
      
-     <TextField className={classes.textfield} id="outlined-basic" placeholder="  ₹  Amount" variant="outlined" />
+     <TextField className={classes.textfield} id="outlined-basic" placeholder="  ₹  Amount" variant="outlined" margin="dense"/>
      </Grid>
      <br/>
      <Grid>
@@ -417,14 +417,14 @@ const handle=(event)=>{
      options={top100Films}
      getOptionLabel={(option) => option.title}
     
-     renderInput={(params) => <TextField className={classes.textfield}{...params} placeholder="Adani Electricity Mumbai Limited" variant="outlined" />}
+     renderInput={(params) => <TextField className={classes.textfield}{...params} placeholder="Adani Electricity Mumbai Limited" variant="outlined" margin="dense"/>}
    />
      </Grid>
      <br/>
      <Grid style={{textAlign:"left"}}>
       
       <Typography className={classes.textcaption}>   Consumer Number</Typography>
-      <TextField  className={classes.textfield}id="outlined-basic" placeholder="Consumer Number" variant="outlined" />
+      <TextField  className={classes.textfield}id="outlined-basic" placeholder="Consumer Number" variant="outlined" margin="dense"/>
      </Grid>
      <br/>
      <Grid>
@@ -441,14 +441,14 @@ const handle=(event)=>{
      
       <Typography className={classes.textcaption}>   Credit Card Number</Typography>
      
-      <TextField className={classes.textfield}id="outlined-basic" placeholder="Credit Card Number" variant="outlined"/>
+      <TextField className={classes.textfield}id="outlined-basic" placeholder="Credit Card Number" variant="outlined"margin="dense"/>
       
      </Grid>
      <br/>
      <Grid style={{textAlign:"left"}}>
    
      <Typography className={classes.textcaption}>    Bill Amount</Typography>
-     <TextField  className={classes.textfield}id="outlined-basic" placeholder="Bill Amount" variant="outlined" />
+     <TextField  className={classes.textfield}id="outlined-basic" placeholder="Bill Amount" variant="outlined" margin="dense"/>
      </Grid>
       <br/>
      <Grid>
@@ -464,7 +464,7 @@ const handle=(event)=>{
      
      <Typography className={classes.textcaption}>   Data Card Number</Typography>
      
-     <TextField className={classes.textfield}id="outlined-basic"  placeholder="Data Card Number " variant="outlined" />&nbsp;&nbsp;
+     <TextField className={classes.textfield}id="outlined-basic"  placeholder="Data Card Number " variant="outlined" margin="dense"/>&nbsp;&nbsp;
      </Grid>
      <br/>
      <Grid style={{textAlign:"left"}}>
@@ -476,7 +476,7 @@ const handle=(event)=>{
     
      getOptionLabel={(option) => option.title}
     
-     renderInput={(params) => <TextField className={classes.textfield} {...params} placeholder="Idea Netsetter" variant="outlined" />}
+     renderInput={(params) => <TextField className={classes.textfield} {...params} placeholder="Idea Netsetter" variant="outlined" margin="dense"/>}
    /> 
      </Grid>
    <br/>
@@ -490,14 +490,14 @@ const handle=(event)=>{
      
      getOptionLabel={(option) => option.title}
     
-     renderInput={(params) => <TextField className={classes.textfield} {...params} placeholder="Select Circle" variant="outlined" />}
+     renderInput={(params) => <TextField className={classes.textfield} {...params} placeholder="Select Circle" variant="outlined" margin="dense"/>}
    />  
      </Grid>
      <br/>
      <Grid style={{textAlign:"left"}}>
       
        <Typography className={classes.textcaption}>    Amount </Typography>
-       <TextField  className={classes.textfield}id="outlined-basic" placeholder="  ₹  Amount" variant="outlined" />
+       <TextField  className={classes.textfield}id="outlined-basic" placeholder="  ₹  Amount" variant="outlined" margin="dense"/>
      </Grid>
      <br/>
      <Grid>
@@ -517,14 +517,14 @@ const handle=(event)=>{
      options={top10}
      getOptionLabel={(option) => option.title}
      
-     renderInput={(params) => <TextField className={classes.textfield} {...params} placeholder="Airtel Landline" variant="outlined" />}
+     renderInput={(params) => <TextField className={classes.textfield} {...params} placeholder="Airtel Landline" variant="outlined" margin="dense"/>}
    />
      </Grid>
      <br/>
      <Grid style={{textAlign:"left"}}>
       <Typography className={classes.textcaption}>    Landline Number (with STD Code)</Typography>
      
-      <TextField className={classes.textfield}  id="outlined-basic"  placeholder=" Landline Number (with Std code)" variant="outlined" />
+      <TextField className={classes.textfield}  id="outlined-basic"  placeholder=" Landline Number (with Std code)" variant="outlined" margin="dense"/>
      </Grid>
      <br/>
      <Grid>
@@ -544,7 +544,7 @@ const handle=(event)=>{
      options={topland}
      getOptionLabel={(option) => option.title}
      
-     renderInput={(params) => <TextField className={classes.textfield} {...params} placeholder="Act Fibernat" variant="outlined" />}
+     renderInput={(params) => <TextField className={classes.textfield} {...params} placeholder="Act Fibernat" variant="outlined" margin="dense"/>}
    />
      </Grid>
      <br/>
@@ -552,7 +552,7 @@ const handle=(event)=>{
        <Typography className={classes.textcaption}>     Account Number/User Name</Typography>
      
      
-      <TextField className={classes.textfield} id="outlined-basic" label=" Account Number/User Name "placeholder=" Landline Number (with Std code)" variant="outlined" />
+      <TextField className={classes.textfield} id="outlined-basic" placeholder=" Landline Number (with Std code)" variant="outlined" margin="dense"/>
      </Grid>
      <br/>
      <Grid>
@@ -571,7 +571,7 @@ const handle=(event)=>{
      options={toppipe}
      getOptionLabel={(option) => option.title}
      
-     renderInput={(params) => <TextField className={classes.textfield} {...params} placeholder="Adani Gas" label="Adani Gas" variant="outlined" />}
+     renderInput={(params) => <TextField className={classes.textfield} {...params} placeholder="Adani Gas"  variant="outlined" margin="dense"/>}
    />
    
      </Grid>
@@ -580,7 +580,7 @@ const handle=(event)=>{
      <Typography className={classes.textcaption}>     Customer ID</Typography>
      
      
-     <TextField className={classes.textfield}id="outlined-basic" label=" Customer ID "placeholder="Customer ID " variant="outlined" />
+     <TextField className={classes.textfield}id="outlined-basic" placeholder="Customer ID " variant="outlined" margin="dense"/>
      </Grid>
      <br/>
      <Grid>
@@ -600,28 +600,28 @@ const handle=(event)=>{
      options={insurance1}
      getOptionLabel={(option) => option.title}
      
-     renderInput={(params) => <TextField className={classes.textfield} {...params} placeholder=" Insurance Coperations" variant="outlined" />}
+     renderInput={(params) => <TextField className={classes.textfield} {...params} placeholder=" Insurance Coperations" variant="outlined" margin="dense" />}
    /> 
      </Grid>
      <br/>
      <Grid style={{textAlign:"left"}}>
      <Typography className={classes.textcaption}>  POLICY NO</Typography>
      
-     <TextField className={classes.textfield} id="outlined-basic"  placeholder="POLICY No " variant="outlined" />&nbsp;&nbsp;
+     <TextField className={classes.textfield} id="outlined-basic"  placeholder="POLICY No " variant="outlined" margin="dense"/>&nbsp;&nbsp;
      </Grid>
      <br/>
      <Grid style={{textAlign:"left"}}>
      <Typography className={classes.textcaption}>   Date Of Birth</Typography>
     
     
-     <TextField className={classes.textfield}  id="outlined-basic"  placeholder="Date Of Birth " variant="outlined" />&nbsp;&nbsp;
+     <TextField className={classes.textfield}  id="outlined-basic"  placeholder="Date Of Birth " variant="outlined" margin="dense"/>&nbsp;&nbsp;
      </Grid>
      <br/>
      <Grid style={{textAlign:"left"}}>
      <Typography className={classes.textcaption}>   Mobile Number</Typography>
     
     
-    <TextField className={classes.textfield} id="outlined-basic" label="Mobile Number"placeholder=" Mobile Number" variant="outlined" />
+    <TextField className={classes.textfield} id="outlined-basic" placeholder=" Mobile Number" variant="outlined" margin="dense"/>
      </Grid>
      <br/>
      <Grid>
@@ -637,14 +637,14 @@ const handle=(event)=>{
      <Grid item container justify="center" style={{display:"block"}}>
      <Grid style={{textAlign:"left"}}>
      <Typography className={classes.textcaption}>   Operator</Typography>
-      <TextField  className={classes.textfield} id="outlined-basic" label=" Mumbai Metro "placeholder="Mumbai Metro " variant="outlined" />
+      <TextField  className={classes.textfield} id="outlined-basic" placeholder="Mumbai Metro " variant="outlined" margin="dense"/>
    
      </Grid>
      <br/>
      <Grid style={{textAlign:"left"}}>
      <Typography className={classes.textcaption}>   Card Number</Typography>
      
-     <TextField className={classes.textfield}  id="outlined-basic" label=" Card Number"placeholder="Card Number" variant="outlined" />
+     <TextField className={classes.textfield}  id="outlined-basic" placeholder="Card Number" variant="outlined" margin="dense"/>
      </Grid>
      <br/>
      <Grid>
@@ -663,14 +663,14 @@ const handle=(event)=>{
      getOptionLabel={(option) => option.title}
     
      renderInput={(params) => <TextField className={classes.textfield} {...params} 
-     placeholder=" Panchayat Water Resources"label="Panchayat Water Resources" variant="outlined" />}
+     placeholder=" Panchayat Water Resources" variant="outlined" margin="dense"/>}
    />
      </Grid>
      <br/>
      <Grid style={{textAlign:"left"}}>
      <Typography className={classes.textcaption}>   Connection ID</Typography>
    
-    <TextField className={classes.textfield} id="outlined-basic" label="Connection ID"placeholder="Connection ID" variant="outlined" />
+    <TextField className={classes.textfield} id="outlined-basic" placeholder="Connection ID" variant="outlined" margin="dense"/>
      </Grid>
      <br/>
      <Grid>
@@ -685,13 +685,13 @@ const handle=(event)=>{
      <Grid item container justify="center" style={{display:"block"}}>
      <Grid style={{textAlign:"left"}}>
      <Typography className={classes.textcaption}>   Operator</Typography>
-      <TextField  className={classes.textfield} id="outlined-basic" label=" Google Play Reacharge Code"placeholder="Google Play Reacharge Code " variant="outlined"/>
+      <TextField  className={classes.textfield} id="outlined-basic" placeholder="Google Play Reacharge Code " variant="outlined"margin="dense"/>
      </Grid>
      <br/>
     <Grid style={{textAlign:"left"}}>
      <Typography className={classes.textcaption}>Amount( ₹100- ₹1500)</Typography>
      
-     <TextField className={classes.textfield}  id="outlined-basic" label=" ₹Amount( ₹100- ₹1500)"placeholder="₹Amount( ₹100- ₹1500)" variant="outlined"/>
+     <TextField className={classes.textfield}  id="outlined-basic"placeholder="₹Amount( ₹100- ₹1500)" variant="outlined"margin="dense"/>
      
      </Grid>
      <br/>
@@ -720,7 +720,7 @@ const handle=(event)=>{
      options={topcable}
      getOptionLabel={(option) => option.title}
     
-     renderInput={(params) => <TextField className={classes.textfield}  {...params} label="Asianet Digital" variant="outlined" />}
+     renderInput={(params) => <TextField className={classes.textfield}  {...params} placeholder="Asianet Digital" variant="outlined" margin="dense"/>}
    />
      </Grid>
      <br/>
@@ -728,7 +728,7 @@ const handle=(event)=>{
      <Typography className={classes.textcaption}>  Subscriber Code</Typography>
      
    
-     <TextField className={classes.textfield}  id="outlined-basic" label=" Subscriber Code"placeholder="Subscriber Code" variant="outlined" />
+     <TextField className={classes.textfield}  id="outlined-basic" placeholder="Subscriber Code" variant="outlined" margin="dense"/>
      </Grid>
      <br/>
      <Grid>
@@ -748,7 +748,7 @@ const handle=(event)=>{
      options={topmuncipality}
      getOptionLabel={(option) => option.title}
      
-     renderInput={(params) => <TextField className={classes.textfield} {...params} label="Ahamedabad Muncipal Corporation" variant="outlined" />}
+     renderInput={(params) => <TextField className={classes.textfield} {...params} placeholder="Ahamedabad Muncipal Corporation" variant="outlined" margin="dense"/>}
    />
      </Grid>
      <br/>
@@ -756,7 +756,7 @@ const handle=(event)=>{
      <Typography className={classes.textcaption}> Tenement No</Typography>
     
     
-     <TextField className={classes.textfield} id="outlined-basic" label=" Tenament No"placeholder="Tenament No" variant="outlined" />
+     <TextField className={classes.textfield} id="outlined-basic" placeholder="Tenament No" variant="outlined" margin="dense"/>
      </Grid>
      <br/>
      <Grid>
@@ -776,7 +776,7 @@ const handle=(event)=>{
      options={topemi}
      getOptionLabel={(option) => option.title}
    
-     renderInput={(params) => <TextField className={classes.textfield}  {...params} label="AAVAS FINANCIERS LIMITED" variant="outlined" />}
+     renderInput={(params) => <TextField className={classes.textfield}  {...params} placeholder="AAVAS FINANCIERS LIMITED" variant="outlined" margin="dense"/>}
    />
      </Grid>
      <br/>
@@ -785,7 +785,7 @@ const handle=(event)=>{
     
     
      
-     <TextField className={classes.textfield} id="outlined-basic" label=" Application ID"placeholder="Application ID" variant="outlined" />
+     <TextField className={classes.textfield} id="outlined-basic" placeholder="Application ID" variant="outlined" margin="dense" />
      </Grid>
      <br/>
      <Grid>
@@ -800,14 +800,14 @@ const handle=(event)=>{
      <Grid style={{textAlign:"left"}}>
      <Typography className={classes.textcaption}>   Operator</Typography>
       
-      <TextField className={classes.textfield} id="outlined-basic" label=" AndraPradesh Traffic POlice"placeholder="AndraPradesh Traffic POlice" variant="outlined" />
+      <TextField className={classes.textfield} id="outlined-basic" placeholder="AndraPradesh Traffic POlice" variant="outlined" margin="dense"/>
      </Grid>
      <br/>
      <Grid style={{textAlign:"left"}}>
      <Typography className={classes.textcaption}> RC/DL/Challan Number
     </Typography>
     
-    <TextField className={classes.textfield} id="outlined-basic" label=" RC/DL/Challan Number"placeholder="RC/DL/Challan Number" variant="outlined" />
+    <TextField className={classes.textfield} id="outlined-basic" placeholder="RC/DL/Challan Number" variant="outlined" margin="dense"/>
      </Grid>
      <br/>
      <Grid>
@@ -827,7 +827,7 @@ const handle=(event)=>{
      options={topcity}
      getOptionLabel={(option) => option.title}
      
-     renderInput={(params) => <TextField className={classes.textfield} {...params} label="City" variant="outlined" />}
+     renderInput={(params) => <TextField className={classes.textfield} {...params} placeholder="City" variant="outlined" margin="dense"/>}
    /> 
      </Grid>
      <br/>
@@ -840,7 +840,7 @@ const handle=(event)=>{
      options={topsociety}
      getOptionLabel={(option) => option.title}
     
-     renderInput={(params) => <TextField className={classes.textfield} {...params} label="Society Name" variant="outlined" />}
+     renderInput={(params) => <TextField className={classes.textfield} {...params} placeholder="Society Name" variant="outlined" margin="dense"/>}
    /> 
      </Grid>
      <br/>
@@ -853,7 +853,7 @@ const handle=(event)=>{
      options={topservice}
      getOptionLabel={(option) => option.title}
      
-     renderInput={(params) => <TextField className={classes.textfield} {...params} label="Service Type" variant="outlined" />}
+     renderInput={(params) => <TextField className={classes.textfield} {...params} placeholder="Service Type" variant="outlined" margin="dense" />}
    /> 
      </Grid>
      <br/>
@@ -861,7 +861,7 @@ const handle=(event)=>{
      <Typography className={classes.textcaption}> Amount </Typography>
         
          
-         <TextField className={classes.textfield} id="outlined-basic" label=" ₹    Amount"placeholder="  ₹  Amount" variant="outlined" />
+         <TextField className={classes.textfield} id="outlined-basic" placeholder="  ₹  Amount" variant="outlined" margin="dense"/>
      </Grid>
      <br/>
      <Grid>
@@ -882,7 +882,7 @@ const handle=(event)=>{
      options={toplpg}
      getOptionLabel={(option) => option.title}
     
-     renderInput={(params) => <TextField className={classes.textfield} {...params} label="Bharath Petrolium Coperation Limited(BPCL)" variant="outlined" />}
+     renderInput={(params) => <TextField className={classes.textfield} {...params} placeholder="Bharath Petrolium Coperation Limited(BPCL)" variant="outlined" margin="dense" />}
    />
    
       
@@ -891,7 +891,7 @@ const handle=(event)=>{
      <Grid style={{textAlign:"left"}}>
      <Typography className={classes.textcaption}>  Registerd Contact Number</Typography>
    
-    <TextField className={classes.textfield} id="outlined-basic" label=" Registered Contact Number"placeholder=" Registered Contact Number" variant="outlined" />
+    <TextField className={classes.textfield} id="outlined-basic" placeholder=" Registered Contact Number" variant="outlined" margin="dense"/>
      </Grid>
      <br/>
      <Grid>
@@ -1264,7 +1264,7 @@ const handle=(event)=>{
           </Box>
         </Box>
       </Box>
-      <Footer/>
+     
       </div>
       </div>
   );
@@ -1298,17 +1298,17 @@ const top100Films = [
     {title:'Mysoore'},
     {title:'Baroda'},];
     const topsociety=[
-      {title:'Airtel DTH'},
-      {title:'Sun Direct'},
-      {title:'Tata Sky'},
-      {title:'d2h'},
-      {title:'Dish Tv'},];
+      {title:'Amruth paerl building no3'},
+      {title:'Amruth paerl building no4'},
+      {title:'megha mailhar '},
+      {title:'megha malhar apartment 4'},
+      {title:'Sai sathyam'},];
       const topservice=[
-        {title:'Airtel DTH'},
-        {title:'Sun Direct'},
-        {title:'Tata Sky'},
-        {title:'d2h'},
-        {title:'Dish Tv'},];
+        {title:'Maintanace'},
+        {title:'Plumping'},
+        {title:'Wiring'},
+        {title:'Costruction'},
+        {title:'Rooofing'},];
   const topmuncipality=[
     {title:'Ahemadabad Muncipal Corpration'},
     {title:' Chennai Muncipal Corpration'},

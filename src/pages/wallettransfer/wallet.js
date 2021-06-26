@@ -341,7 +341,7 @@ export default function Wallet() {
      
   </Grid>
   
-   <Footer/>
+   
     </div>
   );
 }

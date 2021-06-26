@@ -607,7 +607,7 @@ However, KYC process on MobiKwik is rather simple and quick and can be done with
      <a href="#" style={{color:"rgb(106,106,106)"}}>Mutual Fund</a>
     
    </Grid>
-   <Footer/>
+  
     </div>
   );
 }

@@ -5,15 +5,23 @@ import { Link } from 'react-router-dom'
 import './Footer.css'
 export default function Footer() {
   return (
-    <div style={{marginBottom:"-30px"}}>
+    <div style={{marginBottom:"-30px",marginLeft:"200px"}}>
     <div className="row offer-footer width901 pb-3">
       <div className="col-2 offer-footer-links"  >
         <div className="link">
           <Link to=" " className="strong"> Prepaid Recharge</Link>
-          <Link to=" "> BSNL Reacharge</Link>
-          <Link to=" "> Vodafone Idea (VI) Reacharge</Link>
-          <Link to=" "> JIO Reacharge</Link>
-          <Link to=" "> MNTL Reacharge</Link>
+          <Link to="/bsnl">
+             BSNL Reacharge
+            </Link>
+            <Link to="/Vodafone">
+            Vodafone Idea (VI) Reacharge
+            </Link>
+            <Link to="/Mntl">
+            MNTL Reacharge
+            </Link>
+            <Link to="/Jio">
+            JIO Reacharge
+            </Link>
         </div>
 
         <div className="link mt-3">

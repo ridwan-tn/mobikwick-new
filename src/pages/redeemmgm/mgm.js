@@ -336,7 +336,7 @@ export default function Mgm() {
      </Grid>
      
    
-        <Footer/>   
+         
                 
     </div>
   );
