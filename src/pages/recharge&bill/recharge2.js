@@ -57,7 +57,13 @@ import Grid from '@material-ui/core/Grid';
 import PhoneAndroidIcon from '@material-ui/icons/PhoneAndroid';
 import CreditCardIcon from '@material-ui/icons/CreditCard';
 
-import Modal from '@material-ui/core/Modal';
+
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -77,20 +83,9 @@ function TabPanel(props) {
     </div>
   );
 }
-function rand() {
-  return Math.round(Math.random() * 20) - 10;
-}
 
-function getModalStyle() {
-  const top = 50 + rand();
-  const left = 50 + rand();
 
-  return {
-    top: `${top}%`,
-    left: `${left}%`,
-    transform: `translate(-${top}%, -${left}%)`,
-  };
-}
+
 TabPanel.propTypes = {
   children: PropTypes.node,
   index: PropTypes.any.isRequired,
@@ -180,16 +175,17 @@ const handle=(event)=>{
   };
   
 
-const [todos, setTodos] = useState([
-  { id: 1, title: "Selectus aut autem", completed: false },
-  { id: 2, title: "Luis ut nam facilis et officia qui", completed: false },
-  { id: 3, title: "Fugiat veniam minus", completed: false },
-  { id: 4, title: "Aet porro tempora", completed: true },
-  { id: 5, title: "Laboriosam mollitia et enim quasi", completed: false }
-]);
+  const [open5, setOpen1] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen1(true);
+  };
+
+  const handleClose1 = () => {
+    setOpen1(false);
+  };
 const [test,setTest]=useState('');
-const changeInput = (e) => {todos.map(items => items.id === parseInt(e.target.value) && (items.completed = e.target.checked));
-setTodos([...todos], todos);}
+
 const [form, setState] = useState({
   username: '',
   password: '',
@@ -198,7 +194,7 @@ const [form, setState] = useState({
   offer3:'',
 
 });
-const[operator,setOperator]=useState('10');
+const[operator,setOperator]=useState('');
 const[circle,setCircle]=useState('');
 const[amount,setAmount]=useState('');
 
@@ -223,6 +219,11 @@ const[amount,setAmount]=useState('');
   const handleClickhousing = () => setName("Online Housing Society Electricity Bill Payment")
   const userType = '1';
   const classes = useStyles1();
+  
+
+  
+
+  
   return (
     <div>
     <div style={{marginLeft:"200px",marginRight:"100px"}}>
@@ -431,6 +432,7 @@ const[amount,setAmount]=useState('');
     {
      setCount('')
      setState('')
+     setTest('')
       console.log("data size :", e.target.value.toString().length);
     }
       
@@ -443,7 +445,7 @@ const[amount,setAmount]=useState('');
          <Grid item md={2} xs={1}>
       <Autocomplete
       id="combo-box-demo"
-      onChange={(event,value) => setOperator(value.title)}
+      onChange={(_event,value) => setOperator(value.title)}
       options={operat}
       getOptionLabel={(option) => option.title}
       style={{ width:"100%" }}
@@ -480,15 +482,91 @@ const[amount,setAmount]=useState('');
         color="rgb(149,149,149)"
         className={classes.button}
          style={{width:"75px",height:'44px',color:"white"}}
-         
+        onClick={()=>{
+          if(test!=0&&circle!=0&&amount!=0&&operator!=0)
+          { console.log('values inserted')
+       setOpen1(true)
+        }
+         else{
+           console.log('value')
+         }
+        }
+         }  
       >
-        {(() => {
-          if(amount==''){
-            console.log('not entry')
-          }
-         })}
+        
+     
         Go
       </Button>
+      <Dialog
+        open={open5}
+        onClose={handleClose1}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+        
+      >
+        <DialogTitle id="alert-dialog-title">{"Confirm Reacharge"}</DialogTitle>
+        <DialogContent>
+          <DialogContentText style={{fontSize:"14px"}} >
+          <Grid item container>
+            <Grid md={9}>
+            <Typography style={{marginRight:"2px"}}>Mobile Number</Typography>
+            </Grid>
+            <Grid md={3}>
+            {test}
+              </Grid>
+          </Grid>
+             
+          </DialogContentText>
+          <DialogContentText style={{fontSize:"14px"}}>
+          <Grid item container>
+            <Grid md={9}>
+            <Typography style={{marginRight:"2px"}}>Operation/Circle</Typography>
+            </Grid>
+            <Grid md={3}>
+            {operator}/{circle}
+              </Grid>
+              </Grid>
+            
+          </DialogContentText >
+          
+          <DialogContentText style={{fontSize:"14px"}} >
+          <Grid item container>
+            <Grid md={9}>
+            <Typography style={{marginRight:"2px"}}>  Amount</Typography>
+            </Grid>
+            <Grid md={3}>
+            {amount}
+              </Grid>
+              </Grid>
+        
+            
+          </DialogContentText>
+          
+        </DialogContent>
+        
+         <Card style={{width:"400px",height:"100%",margin:"25px",padding:25,backgroundColor:"rgb(245,245,245)"}}>
+          <Grid item container>
+            <Grid md={9}>
+            <Typography style={{marginRight:"2px"}}>Total Amount</Typography>
+            </Grid>
+            <Grid md={3}>
+            {amount}
+              </Grid>
+          </Grid>
+          
+         
+           
+            
+             </Card>
+            
+        <DialogActions style={{alignContent:"center",justifyContent:'center'}}>
+          <Button onClick={handleClose1} variant="contained" color="primary">
+            Make Payment
+          </Button>
+          
+        </DialogActions>
+      </Dialog>
+      
       </Grid>
         </Grid>
        
@@ -500,7 +578,7 @@ const[amount,setAmount]=useState('');
        
       
         
-     
+        
    
         <Grid item container >
         <Grid md={2}>
@@ -519,7 +597,7 @@ const[amount,setAmount]=useState('');
         {form.offer3}
         </Grid>
         </Grid>
-       {test}{operator}{circle}{amount}
+      
        </TabPanel>
       <TabPanel value={value} className={classes.tabpanel} style={{marginRight:"10px"}} index={1}>{/*DTH*/}
       <Grid item container style={{textAlign:"left"}} spacing={2}>
@@ -1413,6 +1491,7 @@ const[amount,setAmount]=useState('');
     
      
     </Grid>
+   
     </div>
     // ridwan code
     <div className={classes.root20}>

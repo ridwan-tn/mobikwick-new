@@ -156,7 +156,50 @@ const handle=(event)=>{
    </div>
    
   };
-  
+  const[val,setVal]=useState('')
+  const body = (
+    <div  >
+     <Grid item container justify="center" style={{display:"block"}}>
+     <Grid style={{textAlign:"left"}}>
+      
+      <Typography className={classes.textcaption}>Operator</Typography>
+      <Autocomplete
+      onChange={(event,value)=>setOperator(value.title)}
+     id="combo-box-demo"
+     options={operat}
+     getOptionLabel={(option) => option.title}
+    
+     renderInput={(params) => <TextField  className={classes.textfield} {...params}placeholder="operator" variant="outlined" margin="dense"/>}
+   />
+     </Grid>
+    <br/>
+     <Grid style={{textAlign:"left"}}>
+      
+      <Typography className={classes.textcaption}>circle</Typography>
+      <Autocomplete
+      onChange={(event,value)=>{setCircle(value.title)}}
+     id="combo-box-demo"
+     options={circ}
+     getOptionLabel={(option) => option.title}
+    
+     renderInput={(params) => <TextField  className={classes.textfield} {...params}placeholder="circle" variant="outlined" margin="dense"/>}
+   />
+     </Grid>
+     <Grid style={{textAlign:"left"}}>
+     <br/>
+     <Typography className={classes.textcaption}> Amount</Typography>
+     
+     <TextField className={classes.textfield} id="outlined-basic" placeholder="  ₹  Amount" variant="outlined" margin="dense"/>
+     </Grid>
+     <br/>
+     
+     </Grid>
+     
+    </div>
+  );
+const[operator,setOperator]=useState('');
+const[circle,setCircle]=useState('');
+const[amount,setAmount]=useState('');
   const handleClickmobile = () => setName("Online Prepaid Mobile Recharge")
   const sonet = () => setName()
   const handleClickdth = () => setName("DTH Reacharge")
@@ -322,8 +365,17 @@ const handle=(event)=>{
      <Grid item container justify="center" style={{display:"block"}}>
      <Grid style={{textAlign:"left"}}>
       <Typography className={classes.textcaption}>Mobile Number</Typography>
-      <TextField className={classes.textfield} id="outlined-basic"  placeholder="Mobile Number " variant="outlined" margin="dense"/>&nbsp;&nbsp;
+      <TextField className={classes.textfield} id="outlined-basic"  placeholder="Mobile Number " variant="outlined" margin="dense" type='number'
+    onChange={e=>{
+      if(e.target.value.toString().length==10){
+        setVal(body)
+      }
+      else{
+        setVal('')
+      }
+    }}/>&nbsp;&nbsp;
      </Grid>
+     {val},{operator},{circle}
      <Grid style={{display:"none"}}>
       Select Operator
       <Autocomplete
@@ -1331,6 +1383,23 @@ const top100Films = [
     {title:'MTNL Mumbai'},
     {title:'Tikona Infinate Private Limited'},
   ];
+  const operat=[
+    {title:'Bsnl'},
+    {title:'vi'},
+    {title:'jio'},
+    {title:'Airtel'}
+  ]
+  const circ=[
+    {title:'Kerala'},
+    {title:'Kolkatta'},
+    {title:'Utter predesh'},
+    {title:'Madhya Predesh'},
+    {title:'Karnataka'},
+    {title:'Tamil Nadu'},
+    {title:'Jammu & Kashmir'},
+    {title:'Pune'},
+    
+  ]
   const topland=[
     {title:'Act Fibernet'},
     {title:"Airtel Broadband"},
