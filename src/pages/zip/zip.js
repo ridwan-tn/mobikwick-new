@@ -1,7 +1,6 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
-import zipmain from "../../assets/zipmain.png";
 import { useStyles } from "./zipstyle";
 import Footer from "../../Components/Footermain/Footer";
 
@@ -19,7 +18,7 @@ export default function AutoGrid() {
         css={{ marginX: 1 }}
       >
         <Box p={0}>
-          <img alt="complex" src={zipmain} className={classes.imageColumn} />
+          <img alt="complex" src="https://static.mobikwik.com/views/images/paylater-banner.png" className={classes.imageColumn} />
         </Box>
       </Box>
 

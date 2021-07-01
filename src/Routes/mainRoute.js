@@ -8,6 +8,7 @@ import Local from "../pages/localstores/local";
 import Payback from "../pages/redeempayback/payback";
 import Mgm from "../pages/redeemmgm/mgm";
 import Wallet from "../pages/wallettransfer/wallet";
+import Zip from "../pages/zip/zip"
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 export default function main() {
@@ -48,6 +49,11 @@ export default function main() {
             exact
             path="/wallet"
             render={(props) => <Wallet {...props} />}
+          />
+           <Route
+            exact
+            path="/zip"
+            render={(props) => <Zip {...props} />}
           />
         </Switch>
       </BrowserRouter>
