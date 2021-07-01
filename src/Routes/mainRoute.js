@@ -59,7 +59,7 @@ export default function main() {
             path="/wallet"
             render={(props) => <Wallet {...props} />}
           />
-          <div style={{width:"84%",float:"right",marginBottom:"100px"}}>
+      <div style={{width:"84%",float:"right",marginBottom:"100px"}}>
          <Route exact path="/electricity-payment/avvnl" component={ ElectricityPayment } />	
         </div>
         </Switch>

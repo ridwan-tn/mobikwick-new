@@ -18,7 +18,7 @@ export default function OffersDealsRoutes() {
 		<Router>
 			<HeaderSection />
 			<Carousels />
-		<Switch>
+
 			<Route exact  path="/offers" component={CardSlider} />
 
 				{/* the Routes for component when Clicking the card */}
@@ -29,7 +29,7 @@ export default function OffersDealsRoutes() {
 						<>
 						{items.map( (item,index )=>(
 							<>
-					<Route  path={`${path}/${section[index]}/${item.brandName}`} component={ShowDetailed} />
+					<Route exact path={`${path}/${section[index]}/${item.brandName}`} component={ShowDetailed} />
 					</>
 				))}
 		
@@ -40,10 +40,10 @@ export default function OffersDealsRoutes() {
 			{/* the Routes for component when Clicking the card */}
 
 			{ section.map( sectionName =>(
-			<Route exact path={`${path}/${sectionName}`} component={ SeeAll } />
+			<Route  path={`${path}/${sectionName}`} component={ SeeAll } />
 			))}
 
-</Switch>
+
 		<Footer/>
 		</Router>
 

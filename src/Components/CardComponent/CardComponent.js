@@ -13,7 +13,7 @@ let { url } = useRouteMatch();
 					imageUrl
 				}
 				}}   style={{ textDecoration: 'none', color: 'inherit' }} >
-				<div className="card">
+				<div className="card offers-cards">
 					<div className="card-img">
 						<img src={imageUrl} className="card-img-top" alt="..." />
 					</div>
